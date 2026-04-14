@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Azure Data Engineering Project | PixelPipeline</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="AZ-Data-Engineering-End-to-End - Project Detail">
+    <meta name="author" content="PixelPipeline"/>
+
+    <!-- Load Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="icon" href="img/favicon.png" type="image/png"/>
+    
+    <style>
+        header {
+            height: auto !important;
+            padding-bottom: 50px;
+        }
+        .main-head {
+            position: relative !important;
+            top: 0 !important;
+            transform: none !important;
+            padding-top: 120px;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        .project-image-container {
+            margin-top: 50px;
+            margin-bottom: 50px;
+            box-shadow: 0 15px 45px rgba(0,0,0,0.2);
+            border-radius: 12px;
+            overflow: hidden;
+            background: #fff;
+            border: 1px solid #eee;
+        }
+        .project-image-container img {
+            width: 100%;
+            height: auto;
+        }
+        .detailed-description {
+            text-align: left;
+            margin-top: 40px;
+        }
+        .detailed-description h5 {
+            font-size: 14px;
+            font-weight: 700;
+            color: #555;
+            margin-top: 30px;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+            line-height: 1.1;
+        }
+        .detailed-description p {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #777;
+            margin-bottom: 30px;
+            text-transform: none; /* Sentence case */
+            font-family: 'Lato', sans-serif;
+        }
+        
+        .title h2 {
+            margin-top: 0;
+            font-weight: 700;
+        }
+        
+        /* Ensure navbar brand img stays small as in home page */
+        .navbar-brand img {
+            height: 50px;
+            width: auto;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-fixed-top" id="header-nav">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="index.html">
+                        <img src="img/logo.png" alt="PixelPipeline - Data Engineering and AI Solutions">
+                    </a>
+                </div>
+                <div class="primary-menu">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <div id="navbar" class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav">
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="index.html#architecture-portfolio">Portfolio</a></li>
+                            <li><a href="index.html#about">About</a></li>
+                            <li><a href="index.html#contact">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        
+        <div class="main-head">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1">
+                        <div class="title text-center">
+                            <h2>AZ-Data-Engineering-End-to-End</h2>
+                            <h6>Modernizing On-Premises Infrastructure with Azure and Databricks</h6>
+                            <div class="divider divider-lg"></div>
+                        </div>
+                        
+                        <div class="project-image-container">
+                            <img src="img/portfolio/PixelPipeline_WORKFLOW_Azure.png" alt="Azure Data Engineering Workflow Diagram">
+                        </div>
+
+                        <div class="detailed-description">
+                            <h5>The Architecture: From Legacy to Cloud-Scale</h5>
+                            <p>This project represents a critical mission for a client looking to modernize and consolidate their disparate on-premises data systems. We engineered a robust Cloud-Native platform that bridges the gap between traditional SQL environments and the Era of Big Data.</p>
+                            
+                            <h5>On-Premises Ingestion</h5>
+                            <p>Everything starts at the source. We migrate critical business data from legacy on-premises Microsoft SQL Server databases using Azure Data Factory. This architecture ensures high-throughput, secure ingestion while maintaining full data integrity as it moves from on-prem to the cloud.</p>
+                            
+                            <h5>Modern Processing Power</h5>
+                            <p>We leverage the best-in-class processing engines: Azure Databricks for massive-scale Spark-based data transformations and Azure Synapse for enterprise-grade data warehousing. This dual-engine approach provides the flexibility to handle both unstructured batch processing and highly structured business analytics.</p>
+
+                            <h5>Medallion Lakehouse Architecture</h5>
+                            <p>At the center of the platform is a unified Azure Data Lake Gen2 account, organized into a rigorous Medallion pattern. Raw data lands in Bronze, is schema-validated and cleaned into Silver, and finally aggregated into optimized Gold datasets, creating a single, reliable source of truth for the organization.</p>
+
+                            <h5>Enterprise-Grade Insight Serving</h5>
+                            <p>Fueling decision-making across the board, Power BI dashboards are directly connected to the Gold layer. This ensures that every stakeholder, from analysts to executives, has access to the most up-to-date KPIs through intuitive, real-time reporting.</p>
+
+                            <h5>Unified Governance & Security</h5>
+                            <p>This isnt just a pipeline; it is a secured data ecosystem. We utilize Databricks Unity Catalog for centralized governance, Azure Active Directory for consistent identity management, and Azure Key Vault to safeguard all sensitive connection credentials and secrets.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="call-to-action">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5 col-md-offset-2">
+                    <h4>Building the Future of Data-Driven Decisions.</h4>
+                </div>
+                <div class="col-md-2 text-center">
+                    <a href="index.html#architecture-portfolio" class="btn btn-cta">Back to Portfolio</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container text-center">
+            <img src="img/logo-white.png" class="logo-footer" alt="PixelPipeline - Data Engineering & AI Consulting">
+            <p style="color: #666; font-size: 14px; margin-top: 20px;">© 2025 PixelPipeline Inc. — Precision. Innovation. Excellence.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="js/smooth-scroll.js"></script>
+    <script src="js/custom.js"></script>
+</body>
+</html>

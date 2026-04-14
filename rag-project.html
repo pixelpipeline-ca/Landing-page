@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Enterprise RAG Project | PixelPipeline</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Enterprise RAG Architecture on Databricks using LLaMA - Project Detail">
+    <meta name="author" content="PixelPipeline"/>
+
+    <!-- Load Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="icon" href="img/favicon.png" type="image/png"/>
+    
+    <style>
+        header {
+            height: auto !important;
+            padding-bottom: 50px;
+        }
+        .main-head {
+            position: relative !important;
+            top: 0 !important;
+            transform: none !important;
+            padding-top: 120px;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        .project-image-container {
+            margin-top: 50px;
+            margin-bottom: 50px;
+            box-shadow: 0 15px 45px rgba(0,0,0,0.2);
+            border-radius: 12px;
+            overflow: hidden;
+            background: #fff;
+            border: 1px solid #eee;
+        }
+        .project-image-container img {
+            width: 100%;
+            height: auto;
+        }
+        .detailed-description {
+            text-align: left;
+            margin-top: 40px;
+        }
+        .detailed-description h5 {
+            font-size: 14px;
+            font-weight: 700;
+            color: #555;
+            margin-top: 30px;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+            line-height: 1.1;
+        }
+        .detailed-description p {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #777;
+            margin-bottom: 30px;
+            text-transform: none; /* Sentence case */
+            font-family: 'Lato', sans-serif;
+        }
+        
+        .title h2 {
+            margin-top: 0;
+            font-weight: 700;
+        }
+        
+        /* Ensure navbar brand img stays small as in home page */
+        .navbar-brand img {
+            height: 50px;
+            width: auto;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-fixed-top" id="header-nav">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="index.html">
+                        <img src="img/logo.png" alt="PixelPipeline - Data Engineering and AI Solutions">
+                    </a>
+                </div>
+                <div class="primary-menu">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <div id="navbar" class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav">
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="index.html#architecture-portfolio">Portfolio</a></li>
+                            <li><a href="index.html#about">About</a></li>
+                            <li><a href="index.html#contact">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        
+        <div class="main-head">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1">
+                        <div class="title text-center">
+                            <h2>Enterprise RAG Architecture on Databricks</h2>
+                            <h6>Scalable Knowledge Retrieval from Disparate Data Sources</h6>
+                            <div class="divider divider-lg"></div>
+                        </div>
+                        
+                        <div class="project-image-container">
+                            <img src="img/portfolio/PixelPipeline_WORKFLOW_LLM_RAG.png" alt="Enterprise RAG Workflow Diagram">
+                        </div>
+
+                        <div class="detailed-description">
+                            <h2>The Architecture: Unified Knowledge Retrieval</h2>
+                            <p>Retrieval-Augmented Generation (RAG) is the gold standard for connecting LLMs to private corporate data. This project showcases a production-grade RAG system built on Databricks, designed to process and query millions of documents from both structured and unstructured sources with sub-second latency.</p>
+                            
+                            <div class="video-container" style="margin: 40px 0;">
+                                <h5 style="margin-top: 0; margin-bottom: 20px;">Video Demonstration</h5>
+                                <div class="embed-responsive embed-responsive-16by9" style="box-shadow: 0 10px 30px rgba(0,0,0,0.15); border-radius: 8px; overflow: hidden;">
+                                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/vyVsyUWx4Bk" allowfullscreen></iframe>
+                                </div>
+                            </div>
+
+                            <h5>Multi-Modal Ingestion Strategy</h5>
+                            <p>We start by ingesting data from every corner of the enterprise: SQL databases for structured records, PDF and Image stores for unstructured documents, and high-frequency real-time event streams. This comprehensive ingestion ensures the AI has a 360-degree view of your organization's knowledge.</p>
+                            
+                            <h5>Serverless Processing with Databricks</h5>
+                            <p>The heavy lifting of data preparation is handled by Databricks Workflows. We utilize Autoloader for effortless incremental file capture and Delta Lake notebooks for scalable ETL jobs, ensuring that new information is processed, cleaned, and updated in real-time without managing infrastructure.</p>
+
+                            <h5>Vector DB & Embedding Pipeline</h5>
+                            <p>Insight is only as good as the retrieval. We implement a custom chunking and embedding pipeline that transforms raw text into multi-dimensional vectors. These are stored in a high-performance Vector Database (Vector Search), enabling semantic relationship matching that far exceeds traditional keyword search.</p>
+
+                            <h5>Deployable Serving Layer</h5>
+                            <p>Accessing the knowledge is seamless. We serve LLaMA models (by Meta) through a dual-interface approach: Databricks Apps for technical users and a custom Streamlit frontend for business stakeholders, providing a natural language interface to the entire corporate knowledge base.</p>
+
+                            <h5>Orchestration & Governance</h5>
+                            <p>The entire flow is managed by LangChain, orchestrating document splitting and vector store interactions. Governance is baked in via Unity Catalog, while MLflow provides a complete audit trail of model versions, embeddings, and overall system performance.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="call-to-action">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5 col-md-offset-2">
+                    <h4>Building the Future of Data-Driven Decisions.</h4>
+                </div>
+                <div class="col-md-2 text-center">
+                    <a href="index.html#architecture-portfolio" class="btn btn-cta">Back to Portfolio</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container text-center">
+            <img src="img/logo-white.png" class="logo-footer" alt="PixelPipeline - Data Engineering & AI Consulting">
+            <p style="color: #666; font-size: 14px; margin-top: 20px;">© 2025 PixelPipeline Inc. — Precision. Innovation. Excellence.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="js/smooth-scroll.js"></script>
+    <script src="js/custom.js"></script>
+</body>
+</html>

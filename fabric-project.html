@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Microsoft Fabric IoT Project | PixelPipeline</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Detecting Anomalies in IoT Telemetry using Microsoft Fabric - Project Detail">
+    <meta name="author" content="PixelPipeline" />
+
+    <!-- Load Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="icon" href="img/favicon.png" type="image/png" />
+
+    <style>
+        header {
+            height: auto !important;
+            padding-bottom: 50px;
+        }
+
+        .main-head {
+            position: relative !important;
+            top: 0 !important;
+            transform: none !important;
+            padding-top: 120px;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .project-image-container {
+            margin-top: 50px;
+            margin-bottom: 50px;
+            box-shadow: 0 15px 45px rgba(0, 0, 0, 0.2);
+            border-radius: 12px;
+            overflow: hidden;
+            background: #fff;
+            border: 1px solid #eee;
+        }
+
+        .project-image-container img {
+            width: 100%;
+            height: auto;
+        }
+
+        .detailed-description {
+            text-align: left;
+            margin-top: 40px;
+        }
+
+        .detailed-description h5 {
+            font-size: 14px;
+            font-weight: 700;
+            color: #555;
+            margin-top: 30px;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+            line-height: 1.1;
+        }
+
+        .detailed-description p {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #777;
+            margin-bottom: 30px;
+            text-transform: none;
+            /* Sentence case */
+            font-family: 'Lato', sans-serif;
+        }
+
+        .title h2 {
+            margin-top: 0;
+            font-weight: 700;
+        }
+
+        /* Ensure navbar brand img stays small as in home page */
+        .navbar-brand img {
+            height: 50px;
+            width: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-fixed-top" id="header-nav">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="index.html">
+                        <img src="img/logo.png" alt="PixelPipeline - Data Engineering and AI Solutions">
+                    </a>
+                </div>
+                <div class="primary-menu">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <div id="navbar" class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav">
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="index.html#architecture-portfolio">Portfolio</a></li>
+                            <li><a href="index.html#about">About</a></li>
+                            <li><a href="index.html#contact">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <div class="main-head">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1">
+                        <div class="title text-center">
+                            <h2>Detecting Anomalies in IoT Telemetry</h2>
+                            <h6>Transforming Raw Streams into Intelligent Action with Microsoft Fabric</h6>
+                            <div class="divider divider-lg"></div>
+                        </div>
+
+                        <div class="project-image-container">
+                            <img src="img/portfolio/PixelPipeline_WORKFLOW_Fabric.png"
+                                alt="Microsoft Fabric IoT Architecture Diagram">
+                        </div>
+
+                        <div class="detailed-description">
+                            <h5>The Architecture: An Intelligent Ecosystem</h5>
+                            <p>This project showcases a unified, end-to-end data intelligence ecosystem built on
+                                Microsoft Fabric. We've replaced fragmented silos with a seamless flow that transforms
+                                high-velocity IoT telemetry into real-time business insights.</p>
+
+                            <h5>High-Velocity Ingestion</h5>
+                            <p>Everything begins at the edge. IoT sensors beam telemetry into Azure IoT Hub, our secure
+                                enterprise gateway. Azure Event Hubs and Stream Analytics work in tandem to capture data
+                                in motion, ensuring zero loss even at extreme scales.</p>
+                                
+                            <h5>Serverless Orchestration</h5>
+                            <p>Azure Functions serve as the connective tissue of the pipeline. These serverless
+                                microservices pre-process raw JSON streams, ensuring data is cleaned, validated, and
+                                formatted before it ever touches our storage layer.</p>
+
+                            <h5>The Unified Lakehouse (OneLake)</h5>
+                            <p>At the center lies Microsoft Fabric's OneLake. We implement a robust Medallion
+                                Architecture: Raw data lands in Bronze, is refined into schema-validated Silver, and
+                                finally aggregated into business-ready Gold datasets. All stored using the open Delta
+                                format for maximum performance and interoperability.</p>
+
+                            <h5>Advanced AI & Engineering</h5>
+                            <p>Synapse Data Engineering handles the heavy lifting of large-scale transformations.
+                                Meanwhile, Synapse Data Science deploys machine learning models directly onto the
+                                Lakehouse, identifying anomalies and trends before they become critical issues.</p>
+
+                            <h5>Intelligent Serving & Action</h5>
+                            <p>Insight is only valuable if it leads to action. Power BI provides live executive
+                                dashboards, while Data Activator acts as an automated sentinel, triggering instant
+                                alerts in Microsoft Teams the moment a threshold is breached.</p>
+
+                            <h5>Enterprise-Grade Governance</h5>
+                            <p>This isn't just a pipeline; it's a secure environment. The entire flow is governed by
+                                Microsoft Purview, protected by Azure Active Directory, and secured via Key Vault,
+                                ensuring compliance and data integrity at every step.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="call-to-action">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5 col-md-offset-2">
+                    <h4>Building the Future of Data-Driven Decisions.</h4>
+                </div>
+                <div class="col-md-2 text-center">
+                    <a href="index.html#architecture-portfolio" class="btn btn-cta">Back to Portfolio</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container text-center">
+            <img src="img/logo-white.png" class="logo-footer" alt="PixelPipeline - Data Engineering & AI Consulting">
+            <p style="color: #666; font-size: 14px; margin-top: 20px;">© 2025 PixelPipeline Inc. — Precision.
+                Innovation. Excellence.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="js/smooth-scroll.js"></script>
+    <script src="js/custom.js"></script>
+</body>
+
+</html>

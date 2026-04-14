@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>NVIDIA LLM Fine-Tuning | PixelPipeline</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Fine-tuning & Deploying LLMs with NVIDIA NeMo and CUDA - Project Detail">
+    <meta name="author" content="PixelPipeline"/>
+
+    <!-- Load Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="icon" href="img/favicon.png" type="image/png"/>
+    
+    <style>
+        header {
+            height: auto !important;
+            padding-bottom: 50px;
+        }
+        .main-head {
+            position: relative !important;
+            top: 0 !important;
+            transform: none !important;
+            padding-top: 120px;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        .project-image-container {
+            margin-top: 50px;
+            margin-bottom: 50px;
+            box-shadow: 0 15px 45px rgba(0,0,0,0.2);
+            border-radius: 12px;
+            overflow: hidden;
+            background: #fff;
+            border: 1px solid #eee;
+        }
+        .project-image-container img {
+            width: 100%;
+            height: auto;
+        }
+        .detailed-description {
+            text-align: left;
+            margin-top: 40px;
+        }
+        .detailed-description h5 {
+            font-size: 14px;
+            font-weight: 700;
+            color: #555;
+            margin-top: 30px;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+            line-height: 1.1;
+        }
+        .detailed-description p {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #777;
+            margin-bottom: 30px;
+            text-transform: none; /* Sentence case */
+            font-family: 'Lato', sans-serif;
+        }
+        
+        .title h2 {
+            margin-top: 0;
+            font-weight: 700;
+        }
+        
+        /* Ensure navbar brand img stays small as in home page */
+        .navbar-brand img {
+            height: 50px;
+            width: auto;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-fixed-top" id="header-nav">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="index.html">
+                        <img src="img/logo.png" alt="PixelPipeline - Data Engineering and AI Solutions">
+                    </a>
+                </div>
+                <div class="primary-menu">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <div id="navbar" class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav">
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="index.html#architecture-portfolio">Portfolio</a></li>
+                            <li><a href="index.html#about">About</a></li>
+                            <li><a href="index.html#contact">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        
+        <div class="main-head">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1">
+                        <div class="title text-center">
+                            <h2>Fine-tuning & Deploying LLMs with NVIDIA NeMo</h2>
+                            <h6>High-Performance Model Engineering on RTX Infrastructure</h6>
+                            <div class="divider divider-lg"></div>
+                        </div>
+                        
+                        <div class="project-image-container">
+                            <img src="img/portfolio/PixelPipeline_WORKFLOW_NVIDIA_LLM.png" alt="NVIDIA LLM Fine-tuning Workflow Diagram">
+                        </div>
+
+                        <div class="detailed-description">
+                            <h2>The Architecture: Precision Model Tuning</h2>
+                            <p>To achieve enterprise-grade performance, generic base models must be tailored to specific domains. This project demonstrates a vertical AI approach using NVIDIA’s high-performance stack to fine-tune, evaluate, and deploy localized LLMs with maximum efficiency.</p>
+                            
+                            <div class="video-container" style="margin: 40px 0;">
+                                <h5 style="margin-top: 0; margin-bottom: 20px;">Video Demonstration</h5>
+                                <div class="embed-responsive embed-responsive-16by9" style="box-shadow: 0 10px 30px rgba(0,0,0,0.15); border-radius: 8px; overflow: hidden;">
+                                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/dULoO06W-qw" allowfullscreen></iframe>
+                                </div>
+                            </div>
+
+                            <h5>Base Model Inference & Quantization</h5>
+                            <p>The journey begins with the Tiny Llama base model. Before fine-tuning, we optimize for memory efficiency using Bitsandbytes 4-bit NF4 quantization. This allows us to load and train powerful models on standard hardware without compromising the core weights or response quality.</p>
+                            
+                            <h5>Advanced Tokenization & Preprocessing</h5>
+                            <p>Clean data is the foundation of high-quality models. We leverage Hugging Face Datasets for robust data management and implement mature prompt templating strategies to ensure the model learns consistent, helpful response patterns during the training phase.</p>
+
+                            <h5>Parameter-Efficient Fine-Tuning (PEFT)</h5>
+                            <p>Rather than training billions of parameters from scratch, we utilize PEFT and LoRA (Low-Rank Adaptation). This strategy only updates a small subset of model weights, drastically reducing training time and compute requirements while achieving performance comparable to full model fine-tuning.</p>
+
+                            <h5>Rigorous Model Evaluation</h5>
+                            <p>Insights must be quantified. Every fine-tuned model undergoes comprehensive evaluation using ROUGE (recall), BLEU (precision), and Perplexity (predictive confidence) metrics, ensuring the output is clinically accurate and naturally fluent before it reaches production.</p>
+
+                            <h5>NVIDIA-Native Production Serving</h5>
+                            <p>For high-availability serving, we deploy via the NVIDIA Triton Inference Server. Running within Docker containers and presented through a Streamlit interface, the entire infrastructure is optimized for NVIDIA RTX 4060 GPUs, leveraging CUDA and SMI for real-time performance monitoring.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="call-to-action">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5 col-md-offset-2">
+                    <h4>Building the Future of Data-Driven Decisions.</h4>
+                </div>
+                <div class="col-md-2 text-center">
+                    <a href="index.html#architecture-portfolio" class="btn btn-cta">Back to Portfolio</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container text-center">
+            <img src="img/logo-white.png" class="logo-footer" alt="PixelPipeline - Data Engineering & AI Consulting">
+            <p style="color: #666; font-size: 14px; margin-top: 20px;">© 2025 PixelPipeline Inc. — Precision. Innovation. Excellence.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="js/smooth-scroll.js"></script>
+    <script src="js/custom.js"></script>
+</body>
+</html>

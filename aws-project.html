@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>AWS Serverless ETL Project | PixelPipeline</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Modern Serverless ETL Architecture on AWS - Project Detail">
+    <meta name="author" content="PixelPipeline"/>
+
+    <!-- Load Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="icon" href="img/favicon.png" type="image/png"/>
+    
+    <style>
+        header {
+            height: auto !important;
+            padding-bottom: 50px;
+        }
+        .main-head {
+            position: relative !important;
+            top: 0 !important;
+            transform: none !important;
+            padding-top: 120px;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        .project-image-container {
+            margin-top: 50px;
+            margin-bottom: 50px;
+            box-shadow: 0 15px 45px rgba(0,0,0,0.2);
+            border-radius: 12px;
+            overflow: hidden;
+            background: #fff;
+            border: 1px solid #eee;
+        }
+        .project-image-container img {
+            width: 100%;
+            height: auto;
+        }
+        .detailed-description {
+            text-align: left;
+            margin-top: 40px;
+        }
+        .detailed-description h5 {
+            font-size: 14px;
+            font-weight: 700;
+            color: #555;
+            margin-top: 30px;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+            line-height: 1.1;
+        }
+        .detailed-description p {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #777;
+            margin-bottom: 30px;
+            text-transform: none; /* Sentence case */
+            font-family: 'Lato', sans-serif;
+        }
+        
+        .title h2 {
+            margin-top: 0;
+            font-weight: 700;
+        }
+        
+        /* Ensure navbar brand img stays small as in home page */
+        .navbar-brand img {
+            height: 50px;
+            width: auto;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-fixed-top" id="header-nav">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="index.html">
+                        <img src="img/logo.png" alt="PixelPipeline - Data Engineering and AI Solutions">
+                    </a>
+                </div>
+                <div class="primary-menu">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <div id="navbar" class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav">
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="index.html#architecture-portfolio">Portfolio</a></li>
+                            <li><a href="index.html#about">About</a></li>
+                            <li><a href="index.html#contact">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        
+        <div class="main-head">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1">
+                        <div class="title text-center">
+                            <h2>Modern Serverless ETL Architecture on AWS</h2>
+                            <h6>Scalable Stream Processing from Multiple Sources</h6>
+                            <div class="divider divider-lg"></div>
+                        </div>
+                        
+                        <div class="project-image-container">
+                            <img src="img/portfolio/PixelPipeline_WORKFLOW_AWS.png" alt="AWS Serverless ETL Workflow Diagram">
+                        </div>
+
+                        <div class="detailed-description">
+                            <h5>The Architecture: Scalable Real-time Intelligence</h5>
+                            <p>This ETL system is built to handle the complexity of modern business applications that generate data across multiple disparate platforms. By leveraging AWS’s serverless offerings, we provide a high-scale, low-maintenance environment for real-time data processing and analytics.</p>
+                            
+                            <h5>Multi-Source Ingestion</h5>
+                            <p>We start by capturing a wide variety of business data from across the ecosystem: Unstructured files in AWS S3, document-based data in MongoDB, and relational records in PostgreSQL. This heterogeneous ingestion strategy ensures that no application data is left behind.</p>
+                            
+                            <h5>Real-Time Streaming Backbone</h5>
+                            <p>Using a custom-built Python API, data is orchestrated and streamed into an AWS MSK (Managed Streaming for Kafka) cluster. Here, messages are categorized into dedicated topics, allowing for parallel, high-throughput processing and zero-loss queuing of real-time events.</p>
+
+                            <h5>Serverless Processing (AWS Glue)</h5>
+                            <p>The core of the ETL flow is powered by AWS Glue. We design multi-stage pipelines that perform schema discovery, data cleaning, and complex transformations without the need to manage any server infrastructure. This allows for effortless scaling as data volumes grow.</p>
+
+                            <h5>Three-Layer Medallion Storage</h5>
+                            <p>For consistent data reliability, we implement a tiered storage architecture. Raw event data is stored in the Bronze layer, transformed into the intermediate Silver layer for analysis, and finally enriched and optimized into Parquet format in the Gold layer within the AWS Glue Catalog.</p>
+
+                            <h5>Advanced Analytics & Serving Ecosystem</h5>
+                            <p>We empower different business needs with a versatile serving layer. Analysts can perform ad-hoc queries on billions of rows with AWS Athena, visualization experts can build live KPIs in AWS QuickSight, and the refined data is seamlessly integrated with Snowflake and MySQL for specialized downstream applications.</p>
+
+                            <h5>Security & Monitoring Watchtower</h5>
+                            <p>The entire platform is proactively monitored and governed. We utilize AWS CloudWatch for real-time performance metrics, AWS Trusted Advisor for architectural optimizations, CloudTrail for audit logging, and AWS GuardDuty for advanced threat detection and continuous security monitoring.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="call-to-action">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5 col-md-offset-2">
+                    <h4>Building the Future of Data-Driven Decisions.</h4>
+                </div>
+                <div class="col-md-2 text-center">
+                    <a href="index.html#architecture-portfolio" class="btn btn-cta">Back to Portfolio</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container text-center">
+            <img src="img/logo-white.png" class="logo-footer" alt="PixelPipeline - Data Engineering & AI Consulting">
+            <p style="color: #666; font-size: 14px; margin-top: 20px;">© 2025 PixelPipeline Inc. — Precision. Innovation. Excellence.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="js/smooth-scroll.js"></script>
+    <script src="js/custom.js"></script>
+</body>
+</html>
