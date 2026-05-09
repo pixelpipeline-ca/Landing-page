@@ -26,18 +26,25 @@
 <body>
     <header>
 
-        <div class="video-background">
-            <video autoplay muted loop playsinline>
-                <source src="videos/PixelPipeline_video_background.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
+        <div class="hero-slider">
+            <div class="hero-slide active" data-slide="0">
+                <video autoplay muted loop playsinline poster="img/pixelpipeline-background-product1.png">
+                    <source src="videos/aziview-ai-interviewer-opener.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="hero-slide" data-slide="1"
+                style="background-image:url('img/pixelpipeline-background-product2.png')">
+            </div>
+            <div class="hero-slide" data-slide="2"
+                style="background-image:url('img/pixelpipeline-background-product3.png')"></div>
         </div>
 
         <nav class="navbar navbar-fixed-top" id="header-nav">
             <div class="container-fluid">
                 <div class="navbar-header">
                     <a class="navbar-brand" href="#">
-                        <img src="img/logo.png" alt="PixelPipeline - Data Engineering and AI Solutions">
+                        <img src="img/logo-white.png" class="logo-light" alt="PixelPipeline - Data Engineering and AI Solutions">
+                        <img src="img/logo.png" class="logo-dark" alt="PixelPipeline - Data Engineering and AI Solutions">
                     </a>
                 </div>
                 <div class="primary-menu">
@@ -61,46 +68,155 @@
             </div>
         </nav>
 
-        <div class="main-head">
+        <div class="hero-content">
             <div class="container">
-                <div class="row">
-                    <div class="col-md-8 col-md-offset-2">
-                        <div class="blurred-text-container">
-                            <h1>Your Data. Yours.</h1>
-                            <h2>We Empower You</h2>
-                        </div>
-                    </div>
+                <div class="col-md-8">
+                    <div class="hero-kicker" id="heroKicker">Agentic AI Product</div>
+                    <h1 class="hero-title" id="heroTitle">Stop wasting time interviewing.</h1>
+                    <p class="hero-subtitle" id="heroSubtitle">Your AI interviewer screens, evaluates, challenges and
+                        ranks candidates automatically — with consistent technical judgment.</p>
+                    <ul class="hero-bullets" id="heroBullets">
+                        <li>Screen faster</li>
+                        <li>Reduce bias</li>
+                        <li>Technical evaluation</li>
+                    </ul>
+                    <a href="#portfolio" class="btn-hero">Explore Solutions</a>
+                    <a href="#contact" class="btn-ghost">Book a Free Consultation</a>
                 </div>
             </div>
+        </div>
+
+        <div class="hero-dots">
+            <button class="hero-dot active" data-target-slide="0" aria-label="AI Interviewer"></button>
+            <button class="hero-dot" data-target-slide="1" aria-label="Enterprise Knowledge Assistant"></button>
+            <button class="hero-dot" data-target-slide="2" aria-label="Custom AI Models"></button>
         </div>
     </header>
     <div class="call-to-action">
         <div class="container">
             <div class="row">
-                <div class="col-md-5 col-md-offset-2">
-                    <h4>Engineering Data, Powering AI, Unlocking Insights.</h4>
+                <div class="col-md-5 pain-card">
+                    <h3>Manual work is the hidden tax on your business.</h3>
+                    <p>Interviews, reports, searches, dashboards, tickets, data checks — repeated every day by expensive
+                        people.</p>
                 </div>
-                <div class="col-md-2">
-                    <a href="index.html#contact" class="btn btn-cta">Get a Free Consultation</a>
+                <div class="col-md-5 col-md-offset-1 pain-card">
+                    <h3>We replace it with AI systems that run 24/7.</h3>
+                    <p>PixelPipeline builds practical AI automation, data pipelines and GenAI products that remove
+                        operational friction and create measurable value.</p>
                 </div>
             </div>
         </div>
     </div>
+
+    <section id="products" class="portfolio">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                    <div class="title text-center">
+                        <h2>AI Products Built to Kill Operational Pain</h2>
+                        <h6>Not demos. Business systems.</h6>
+                        <div class="divider divider-lg"></div>
+                        <p>We package advanced AI, automation and data architecture into focused solutions
+                            that solve painful, repetitive business problems.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container" id="products-grid">
+            <div class="row">
+                <figure class="col-md-4 col-sm-6">
+                    <a href="agentic-interview-project.html">
+                        <img src="img/portfolio/pixelpipeline-Agentic_AI_Interviewer.png" class="img-responsive"
+                            alt="AI interviewer for candidate screening">
+                    </a>
+                    <h5>Automate Candidate Screening with AI</h5>
+                    <p>Replace repetitive first-round interviews with an AI interviewer that asks, adapts,
+                        evaluates and produces structured candidate insights.<br><br>
+                        <a href="agentic-interview-project.html" style="color: #333; font-weight: 600;">See the product
+                            →</a>
+                    </p>
+                </figure>
+
+                <figure class="col-md-4 col-sm-6">
+                    <a href="rag-project.html">
+                        <img src="img/portfolio/pixelpipeline-RAG.png" class="img-responsive"
+                            alt="Enterprise RAG knowledge assistant on Databricks">
+                    </a>
+                    <h5>Ask Your Data. Get Answers Instantly.</h5>
+                    <p>Turn documents, tables and business systems into a reliable internal assistant so teams
+                        stop digging and start deciding.<br><br>
+                        <a href="rag-project.html" style="color: #333; font-weight: 600;">See the product →</a>
+                    </p>
+                </figure>
+
+                <figure class="col-md-4 col-sm-6">
+                    <a href="nvidia-llm-project.html">
+                        <img src="img/portfolio/pixelpipeline-Nvidia-Nemo.png" class="img-responsive"
+                            alt="Custom LLM fine tuning and deployment">
+                    </a>
+                    <h5>AI That Understands Your Business</h5>
+                    <p>Generic AI is not enough. We adapt models, workflows and evaluation pipelines to your
+                        business context and production needs.<br><br>
+                        <a href="nvidia-llm-project.html" style="color: #333; font-weight: 600;">See the product →</a>
+                    </p>
+                </figure>
+            </div>
+        </div>
+    </section>
+
+    <section class="how-it-works">
+        <div class="container">
+            <div class="title text-center">
+                <h2>How We Create Value</h2>
+                <h6>Simple. Focused. Measurable.</h6>
+                <div class="divider divider-lg"></div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 step">
+                    <div class="step-number">1</div>
+                    <h4>Find the painful process</h4>
+                    <p>We identify repetitive work, decision bottlenecks and data chaos that slow your team down.</p>
+                </div>
+                <div class="col-md-4 step">
+                    <div class="step-number">2</div>
+                    <h4>Build the AI system</h4>
+                    <p>We design a clean architecture, automate the workflow and connect it to your data safely.</p>
+                </div>
+                <div class="col-md-4 step">
+                    <div class="step-number">3</div>
+                    <h4>Package and scale</h4>
+                    <p>You get a reusable solution that can be monitored, improved and extended over time.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section id="about" class="no-padding">
         <div class="container">
             <div class="title title-left">
-                <h2>Thameur Aissaoui, Eng</h2>
-                <h6>Engineer | Data & AI Software Solutions</h6>
-                <h6>Founder</h6>
+                <h2>Built by a Certified Professional Engineer</h2>
+                <h6>Engineering accountability behind every solution</h6>
                 <div class="divider divider-sm"></div>
             </div>
-            <p>As a holder of an Engineering degree from École de Technologie Supérieure (ÉTS) and a member of
-                the Ordre des Ingénieurs du Québec (OIQ), my primary focus is to help clients extract meaningful
-                insights from their data. I provide end-to-end support, from data extraction to reporting,
-                ensuring a seamless and efficient process.<br><br>Additionally, I leverage the power of the
-                cloud to develop and train reliable machine learning models. My ultimate goal is to deliver an
-                unparalleled client experience through innovation, efficiency, and expertise.
+            <p>PixelPipeline is led by Thameur Aissaoui, Eng., a member of the Ordre des ingénieurs du Québec. We build
+                reliable, production-grade AI and data systems for businesses that cannot afford fragile demos or
+                improvised architecture.
             </p>
+            <div class="trust-box">
+                <h4>Professional structure. Real accountability.</h4>
+                <p>Solutions are designed with performance, security, maintainability and professional responsibility in
+                    mind.</p>
+                <ul class="proof-points">
+                    <li>✓ Member of the Ordre des ingénieurs du Québec</li>
+                    <li>✓ <a
+                            href=https://www.oiq.qc.ca/en/general-public/protection-of-the-public/assurance-responsabilite />Covered
+                        by professional liability insurance for errors and omissions (The OIQ ensures that each member
+                        maintains professional liability insurance coverage to protect the clients.)</a>
+                    </li>
+                    <li>✓ Architecture-first delivery with governance, monitoring and documentation</li>
+                </ul>
+            </div>
             <div class="row">
                 <div class="col-md-6">
                     <img src="img/Thameur_aissaoui_engineer.jpg" class="img-responsive">
@@ -112,6 +228,88 @@
             </div>
 
         </div>
+        <section class="final-cta">
+            <div class="container">
+                <h2>Stop wasting time on manual work.</h2>
+                <p>Tell us the process you want to automate. We will help you turn it into an AI-powered system.</p>
+                <a href="#contact" class="btn-hero">Book a Free Consultation</a>
+            </div>
+        </section>
+        <section class="portfolio" id="portfolio">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <div class="title text-center">
+                            <h2>Services</h2>
+                            <h6>Selective consulting. Product-grade delivery.</h6>
+                            <div class="divider divider-lg"></div>
+                            <p>For clients who need expert execution, PixelPipeline delivers secure cloud data
+                                platforms,
+                                GenAI
+                                systems, automation, dashboards and governance foundations.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container" id="portfolio-grid">
+                <nav class="centered-pills clearfix">
+                    <ul class="nav nav-pills">
+                        <li><a href="javascript:void(0);" class="filter active" data-filter="all">All</a></li>
+                        <li><a href="javascript:void(0);" class="filter" data-filter=".mockups">Security</a></li>
+                        <li><a href="javascript:void(0);" class="filter" data-filter=".devices">Data Engineering</a>
+                        </li>
+                        <li><a href="javascript:void(0);" class="filter" data-filter=".frames">AI</a></li>
+                        <li><a href="javascript:void(0);" class="filter" data-filter=".templates">BI and Cloud</a></li>
+                    </ul>
+                </nav>
+                <div class="row">
+                    <figure class="mix all devices col-md-4 col-sm-6">
+                        <img src="img/portfolio/pixelpipeline-Data-Engineering.jpg" class="img-responsive"
+                            alt="Data Engineering & Scalable Pipelines by PixelPipeline">
+                        <h5>Data Engineering & Scalable Pipelines</h5>
+                        <p>Reliable ingestion, transformation and reporting pipelines built for cloud, lakehouse and
+                            operational analytics.</p>
+                    </figure>
+                    <figure class="mix all frames col-md-4 col-sm-6">
+                        <img src="img/portfolio/pixelpipeline-AI-Machine-Learning.jpg" class="img-responsive"
+                            alt="AI & Machine Learning Solutions by PixelPipeline">
+                        <h5>AI & Machine Learning Solutions</h5>
+                        <p>Practical ML and AI systems designed to automate decisions, reduce manual effort and support
+                            business operations.</p>
+                    </figure>
+                    <figure class="mix all templates col-md-4 col-sm-6">
+                        <img src="img/portfolio/pixelpipeline-BI-BIG-Data.jpg" class="img-responsive"
+                            alt="Business Intelligence & Big Data Analytics by PixelPipeline">
+                        <h5>Generative AI Solutions</h5>
+                        <p>RAG, agents, vector search, model serving, evaluation and governance for production-grade
+                            GenAI
+                            use cases.</p>
+                    </figure>
+                    <figure class="mix all devices col-md-4 col-sm-6">
+                        <img src="img/portfolio/pixelpipeline-Data-Visualization-Reporting.jpg" class="img-responsive"
+                            alt="Data Visualization & Reporting using Power BI and Tableau - PixelPipeline">
+                        <h5>Dashboards & Decision Intelligence</h5>
+                        <p>Power BI, Tableau and real-time reporting that turn raw data into clear business decisions.
+                        </p>
+                    </figure>
+                    <figure class="mix all templates col-md-4 col-sm-6">
+                        <img src="img/portfolio/pixelpipeline-cloud-services.jpg" class="img-responsive"
+                            alt="Cloud Services, DevOps & Security - PixelPipeline">
+                        <h5>Cloud, DevOps, DataOps & MLOps</h5>
+                        <p>Secure, automated infrastructure and delivery pipelines for data, AI and analytics platforms.
+                        </p>
+                    </figure>
+                    <figure class="mix all mockups col-md-4 col-sm-6">
+                        <img src="img/portfolio/pixelpipeline-Training-Security-Audits.jpg" class="img-responsive"
+                            alt="Training & Security Audits for Data Systems - PixelPipeline">
+                        <h5>Security, Governance & Training</h5>
+                        <p>Security reviews, data governance guidance and team enablement for sustainable long-term
+                            operations.</p>
+                    </figure>
+                </div>
+            </div>
+        </section>
+
         <div class="video">
             <div class="video-wrapper">
                 <div class="centred-container">
@@ -121,77 +319,7 @@
                 </div>
             </div>
         </div>
-    </section>
-    <section class="portfolio" id="portfolio">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="title text-center">
-                <h2>Services</h2>
-                <h6>Let us help you</h6>
-                <div class="divider divider-lg"></div>
-                <p>Data isn’t just numbers — it’s your edge.<br />
-                    At PixelPipeline, we refine data into strategic insights, spotlight the metrics that truly matter,
-                    and help you build a future fueled by informed decisions.</p>
-            </div>
-        </div>
-        <div class="container" id="portfolio-grid">
-            <nav class="centered-pills clearfix">
-                <ul class="nav nav-pills">
-                    <li><a href="javascript:void(0);" class="filter active" data-filter="all">All</a></li>
-                    <li><a href="javascript:void(0);" class="filter" data-filter=".mockups">Security</a></li>
-                    <li><a href="javascript:void(0);" class="filter" data-filter=".devices">Data Engineering</a></li>
-                    <li><a href="javascript:void(0);" class="filter" data-filter=".frames">AI</a></li>
-                    <li><a href="javascript:void(0);" class="filter" data-filter=".templates">BI and Cloud</a></li>
-                </ul>
-            </nav>
-            <div class="row">
-                <figure class="mix all devices col-md-4 col-sm-6">
-                    <img src="img/portfolio/pixelpipeline-Data-Engineering.jpg" class="img-responsive"
-                        alt="Data Engineering & Scalable Pipelines by PixelPipeline">
-                    <h5>Data Engineering & Scalable Pipelines</h5>
-                    <p>From data extraction to reporting, we build end-to-end pipelines using modern cloud architectures
-                        (Azure, Databricks) or legacy open-source frameworks (ETL, ELT) to ensure seamless, efficient
-                        data processing.</p>
-                </figure>
-                <figure class="mix all frames col-md-4 col-sm-6">
-                    <img src="img/portfolio/pixelpipeline-AI-Machine-Learning.jpg" class="img-responsive"
-                        alt="AI & Machine Learning Solutions by PixelPipeline">
-                    <h5>AI & Machine Learning Solutions</h5>
-                    <p>We design, train, and deploy machine learning and AI models on cloud platforms like Azure ML &
-                        Databricks to help businesses gain predictive insights and automate decision-making at scale.
-                    </p>
-                </figure>
-                <figure class="mix all templates col-md-4 col-sm-6">
-                    <img src="img/portfolio/pixelpipeline-BI-BIG-Data.jpg" class="img-responsive"
-                        alt="Business Intelligence & Big Data Analytics by PixelPipeline">
-                    <h5>Generative AI Solutions</h5>
-                    <p>We build LLM-driven solutions on Databricks, using tools like Vector Search, Model Serving,
-                        MLflow, Agent Bricks and Unity Catalog to streamline development, deployment, and governance.
-                    </p>
-                </figure>
-                <figure class="mix all devices col-md-4 col-sm-6">
-                    <img src="img/portfolio/pixelpipeline-Data-Visualization-Reporting.jpg" class="img-responsive"
-                        alt="Data Visualization & Reporting using Power BI and Tableau - PixelPipeline">
-                    <h5>Data Visualization & Reporting</h5>
-                    <p>We transform complex data into clear, interactive dashboards using Power BI, Tableau, and Looker,
-                        helping you make informed decisions with real-time reporting and KPIs.</p>
-                </figure>
-                <figure class="mix all templates col-md-4 col-sm-6">
-                    <img src="img/portfolio/pixelpipeline-cloud-services.jpg" class="img-responsive"
-                        alt="Cloud Services, DevOps & Security - PixelPipeline">
-                    <h5>Cloud, DevOps, DataOps & MLOps Services</h5>
-                    <p>We apply best practices in Cloud, DevOps, DataOps, MLOps, and SecOps to deliver secure, scalable,
-                        and automated infrastructure—from data pipelines and CI/CD to model deployment and governance.
-                    </p>
-                </figure>
-                <figure class="mix all mockups col-md-4 col-sm-6">
-                    <img src="img/portfolio/pixelpipeline-Training-Security-Audits.jpg" class="img-responsive"
-                        alt="Training & Security Audits for Data Systems - PixelPipeline">
-                    <h5>Training & Security Audits</h5>
-                    <p>We provide training, security audits, and data system evaluations to empower teams, enhance
-                        security, and optimize data strategies for long-term success.</p>
-                </figure>
-            </div>
-        </div>
+
     </section>
     <section class="portfolio" id="architecture-portfolio">
         <div class="col-md-8 col-md-offset-2">
@@ -199,10 +327,8 @@
                 <h2>Work & Architecture Design</h2>
                 <h6>See Our Craftsmanship</h6>
                 <div class="divider divider-lg"></div>
-                <p>Explore our architectural designs and engineering projects, blending innovation, simplicity, and
-                    precision to bring visions to life.<br />
-                    We engineered a high-availability, scalable architecture to power cloud-native applications and
-                    advanced AI platforms. <br />The design ensures maximum uptime and future-proof flexibility.
+                <p>Architecture-first delivery for AI, data engineering, cloud migration, analytics and production
+                    automation.
                 </p>
             </div>
         </div>
@@ -215,7 +341,7 @@
                             <img src="img/portfolio/pixelpipeline-Agentic_AI_Interviewer.png" class="img-responsive"
                                 alt="Agentic AI HR Interviewer">
                         </a>
-                        <h5>Agentic AI HR Interviewer</h5>
+                        <h5>Automate Candidate Screening with AI</h5>
                     </div>
                 </figure>
 
@@ -226,7 +352,7 @@
                             <img src="img/portfolio/pixelpipeline-RAG.png" class="img-responsive"
                                 alt="Enterprise RAG on Databricks">
                         </a>
-                        <h5>Enterprise RAG Architecture on Databricks</h5>
+                        <h5>Ask Your Data. Get Answers Instantly.</h5>
                     </div>
                 </figure>
 
@@ -237,7 +363,7 @@
                             <img src="img/portfolio/pixelpipeline-Nvidia-Nemo.png" class="img-responsive"
                                 alt="LLM Fine-tuning with NVIDIA NeMo">
                         </a>
-                        <h5>Fine-tuning & Deploying LLMs with NVIDIA NeMo</h5>
+                        <h5>Custom AI That Understands Your Business</h5>
                     </div>
                 </figure>
             </div>
@@ -281,21 +407,6 @@
 
 
     <section id="about">
-        <div class="testimonial">
-            <div class="mask">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-8 col-md-offset-2">
-                            <div class="single-testimonial">
-                                <i class="fa fa-quote-right"></i>
-                                <p>“All models are wrong, but some are useful”.</p>
-                                <h6>George E. P. Box </h6>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
         <div class="container">
             <div class="row">
                 <div class="col-md-8 col-md-offset-2">
@@ -304,9 +415,7 @@
                         <span>Why Shouldn't You?</span>
                         <div class="divider divider-lg"></div>
                         <p>We focus on deeply understanding each client's unique challenges to deliver tailored
-                            solutions that drive innovation while measuring real impact.
-                            Through this approach, PixelPipeline has built trusted partnerships and delivered solutions
-                            that create meaningful value.</p>
+                            solutions that create measurable business value.</p>
                     </div>
                 </div>
             </div>
@@ -385,8 +494,8 @@
                 <address class="col-md-4">
                     <span>
                         <i class="fa fa-home"></i>
-                        608-1065 RUE DES FRANCS-BOURGEOIS<br>
-                        BOISBRIAND QC J7H0G9
+                        Greater Montreal Area
+                        Québec, Canada
                     </span>
                 </address>
                 <address>
@@ -447,7 +556,7 @@
                         <li class="wow bounceIn" data-wow-delay="0.5s"><a href="#" target="_blank"><i
                                     class="fa fa-google"></i></a></li>
                     </ul>
-                    <p style="text-align: center; font-size: 0.9rem; color: #aaa; margin-top: 0px;">© 2025 PixelPipeline
+                    <p style="text-align: center; font-size: 0.9rem; color: #aaa; margin-top: 0px;">© 2026 PixelPipeline
                         Inc. — Designed and built in-house with pride.</p>
 
                 </div>
@@ -474,6 +583,51 @@
     <script type="text/javascript" src="js/custom.js"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
+
+    <script>
+        const heroSlides = [
+            {
+                kicker: "Agentic AI Product",
+                title: "Stop wasting time interviewing.",
+                subtitle: "Your AI interviewer screens, evaluates, challenges and ranks candidates automatically — with consistent technical judgment.",
+                bullets: ["Screen faster", "Reduce bias", "Technical evaluation"]
+            },
+            {
+                kicker: "Enterprise Knowledge Assistant",
+                title: "Ask your data. Get answers instantly.",
+                subtitle: "Turn documents, tables and business systems into an internal AI assistant that helps teams find answers without digging through chaos.",
+                bullets: ["Search less", "Decide faster", "Use your own data"]
+            },
+            {
+                kicker: "Custom AI Systems",
+                title: "Generic AI is not enough.",
+                subtitle: "We adapt AI workflows, models and evaluation pipelines to your business context so automation becomes reliable, useful and production-ready.",
+                bullets: ["Custom workflows", "Lower hallucinations", "Production deployment"]
+            }
+        ];
+
+        let currentHeroSlide = 0;
+        const slideEls = document.querySelectorAll('.hero-slide');
+        const dotEls = document.querySelectorAll('.hero-dot');
+
+        function renderHeroSlide(index) {
+            currentHeroSlide = index;
+            slideEls.forEach((slide, i) => slide.classList.toggle('active', i === index));
+            dotEls.forEach((dot, i) => dot.classList.toggle('active', i === index));
+            document.getElementById('heroKicker').textContent = heroSlides[index].kicker;
+            document.getElementById('heroTitle').textContent = heroSlides[index].title;
+            document.getElementById('heroSubtitle').textContent = heroSlides[index].subtitle;
+            document.getElementById('heroBullets').innerHTML = heroSlides[index].bullets.map(b => `<li>${b}</li>`).join('');
+        }
+
+        dotEls.forEach(dot => {
+            dot.addEventListener('click', () => renderHeroSlide(Number(dot.dataset.targetSlide)));
+        });
+
+        setInterval(() => {
+            renderHeroSlide((currentHeroSlide + 1) % heroSlides.length);
+        }, 8000);
+    </script>
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-CCQG9X0405"></script>
