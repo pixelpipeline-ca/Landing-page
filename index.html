@@ -73,8 +73,10 @@
         <div class="hero-content">
             <div class="container">
                 <div class="col-md-8">
-                    <div class="hero-kicker" id="heroKicker">Agentic AI Interviewer</div>
-                    <h1 class="hero-title" id="heroTitle">Stop wasting time interviewing.</h1>
+                    <a href="agentic-interview-project.html" class="hero-kicker" id="heroKicker"
+                        style="text-decoration: none; display: inline-block;">Agentic AI Interviewer</a>
+                    <h1 class="hero-title"><a href="agentic-interview-project.html" id="heroTitle"
+                            style="text-decoration: none; color: inherit;">Stop wasting time interviewing.</a></h1>
                     <p class="hero-subtitle" id="heroSubtitle">Your AI interviewer screens, evaluates, challenges and
                         ranks candidates automatically — with consistent technical judgment.</p>
                     <ul class="hero-bullets" id="heroBullets">
@@ -137,12 +139,8 @@
             <ul class="proof-points">
                 <li>Member of the Ordre des ingénieurs du Québec</li>
                 <li><a href="https://www.oiq.qc.ca/en/general-public/protection-of-the-public/assurance-responsabilite"
-                        class="highlight-insurance">All
-                        our clients are covered
-                        by professional liability insurance for errors and omissions, The OIQ ensures that each
-                        member maintains professional liability insurance coverage to protect all clients,
-                        specifically in high-stakes sectors like Finance, Healthcare, and Enterprise
-                        SaaS.</a>
+                        class="highlight-insurance">As an OIQ-registered engineer, all client engagements are backed by
+                        mandatory professional liability insurance coverage for errors and omissions.</a>
                 </li>
                 <li>Architecture-first delivery with governance, monitoring and documentation</li>
             </ul>
@@ -425,23 +423,38 @@
                 </div>
                 <div class="col-md-3 col-sm-6">
                     <div class="team-member">
-                        <img src="img/trusted-us/img2.jpg" class="img-responsive"
-                            alt="Alten Canada - Data & AI Solutions">
-                        <h6>Alten Canada</h6>
+                        <img src="img/trusted-us/img2.jpg" class="img-responsive" alt="Alten Canada">
+                        <h6>Alten Canada - Data & AI Solutions</h6>
                     </div>
                 </div>
                 <div class="col-md-3 col-sm-6">
                     <div class="team-member">
-                        <img src="img/trusted-us/img3.jpg" class="img-responsive"
-                            alt="The Northern Analytics - AI-Powered Data Analytics">
-                        <h6>The Northern Analytics</h6>
+                        <img src="img/trusted-us/img3.jpg" class="img-responsive" alt="The Northern Analytics">
+                        <h6>The Northern Analytics - AI-Powered Data Analytics</h6>
                     </div>
                 </div>
                 <div class="col-md-3 col-sm-6">
                     <div class="team-member">
-                        <img src="img/trusted-us/img4.jpg" class="img-responsive"
-                            alt="Imetrics - Data Strategy and Consulting">
-                        <h6>Imetrics</h6>
+                        <img src="img/trusted-us/img4.jpg" class="img-responsive" alt="Imetrics">
+                        <h6>Imetrics - Data Strategy & Consulting</h6>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="team-member">
+                        <img src="img/trusted-us/img5.jpg" class="img-responsive" alt="Toptal">
+                        <h6>Toptal - New York , United States</h6>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="team-member">
+                        <img src="img/trusted-us/img6.jpg" class="img-responsive" alt="Exfo">
+                        <h6>Exfo - Network test, monitoring & analytics</h6>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="team-member">
+                        <img src="img/trusted-us/img7.jpg" class="img-responsive" alt="Braintrust">
+                        <h6>Braintrust - San Francisco, California, United States</h6>
                     </div>
                 </div>
             </div>
@@ -584,18 +597,21 @@
         const heroSlides = [
             {
                 kicker: "Agentic AI Interviewer",
+                link: "agentic-interview-project.html",
                 title: "Stop wasting time interviewing.",
                 subtitle: "Your AI interviewer screens, evaluates, challenges and ranks candidates automatically — with consistent technical judgment.",
                 bullets: ["Screen faster", "Reduce bias", "Technical evaluation"]
             },
             {
                 kicker: "Enterprise Knowledge Assistant",
+                link: "rag-project.html",
                 title: "Ask your data. Get answers instantly.",
                 subtitle: "Turn documents, tables and business systems into an internal AI assistant that helps teams find answers without digging through chaos.",
                 bullets: ["Search less", "Decide faster", "Use your own data"]
             },
             {
                 kicker: "Custom AI Systems",
+                link: "nvidia-llm-project.html",
                 title: "Generic AI is not enough.",
                 subtitle: "We adapt AI workflows, models and evaluation pipelines to your business context so automation becomes reliable, useful and production-ready.",
                 bullets: ["Custom workflows", "Lower hallucinations", "Production deployment"]
@@ -610,8 +626,15 @@
             currentHeroSlide = index;
             slideEls.forEach((slide, i) => slide.classList.toggle('active', i === index));
             dotEls.forEach((dot, i) => dot.classList.toggle('active', i === index));
-            document.getElementById('heroKicker').textContent = heroSlides[index].kicker;
-            document.getElementById('heroTitle').textContent = heroSlides[index].title;
+
+            const kickerEl = document.getElementById('heroKicker');
+            kickerEl.textContent = heroSlides[index].kicker;
+            kickerEl.href = heroSlides[index].link;
+
+            const titleEl = document.getElementById('heroTitle');
+            titleEl.textContent = heroSlides[index].title;
+            titleEl.href = heroSlides[index].link;
+
             document.getElementById('heroSubtitle').textContent = heroSlides[index].subtitle;
             document.getElementById('heroBullets').innerHTML = heroSlides[index].bullets.map(b => `<li>${b}</li>`).join('');
         }

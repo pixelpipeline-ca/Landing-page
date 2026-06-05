@@ -654,6 +654,13 @@ header {
 	margin-bottom: 20px;
 }
 
+.hero-title a, 
+.hero-title a:hover, 
+.hero-title a:focus {
+	color: inherit;
+	text-decoration: none;
+}
+
 .hero-subtitle {
 	font-size: 22px;
 	line-height: 1.45;
@@ -680,9 +687,9 @@ header {
 }
 
 .btn-hero {
-	background: #fff;
-	color: #000;
-	border: 2px solid #fff;
+	background: transparent;
+	color: #fff;
+	border: 2px solid rgba(255, 255, 255, .8);
 	padding: 14px 28px;
 	text-transform: uppercase;
 	letter-spacing: 1px;
@@ -691,8 +698,8 @@ header {
 }
 
 .btn-hero:hover {
-	background: transparent;
-	color: #fff;
+	background: #fff;
+	color: #000;
 	text-decoration: none;
 }
 
