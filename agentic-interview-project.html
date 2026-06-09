@@ -25,11 +25,15 @@
             <div class="container-fluid">
                 <div class="navbar-header">
                     <a class="navbar-brand" href="index.html">
-                        <img src="img/logo.png" alt="PixelPipeline - Data Engineering and AI Solutions">
+                        <img src="img/logo-white.png" class="logo-light"
+                            alt="PixelPipeline - Data Engineering and AI Solutions">
+                        <img src="img/logo.png" class="logo-dark"
+                            alt="PixelPipeline - Data Engineering and AI Solutions">
                     </a>
                 </div>
                 <div class="primary-menu">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                        aria-expanded="false" aria-controls="navbar">
                         <span class="sr-only">Toggle navigation</span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
@@ -51,23 +55,14 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-10 col-md-offset-1">
-                        <div class="title text-center">
-                            <h2>Agentic AI HR Interviewer</h2>
-                            <h6>Building an Autonomous Recruiting Ecosystem with LangGraph</h6>
-                            <div class="divider divider-lg"></div>
-                        </div>
-
-                        <div class="project-image-container">
-                            <img src="img/portfolio/PixelPipeline_WORKFLOW_Job_Interview_Agentic_LLMs.png"
-                                alt="Agentic AI Job Interviewer Workflow Diagram">
-                        </div>
-
                         <div class="detailed-description">
-                            <h2>The Architecture: Autonomous Recruiting Intelligence</h2>
-                            <p>This project introduces a next-generation AI interviewer designed to handle end-to-end
-                                technical screenings. By moving beyond simple chatbots to an agentic, multi-node
-                                architecture, we enable deep reasoning and dynamic follow-up capabilities that simulate
-                                a human-level interviewing experience.</p>
+                            <h2 style="margin-top: 0;">Agentic AI HR Interviewer</h2>
+                            <p>A full-stack, AI-powered interview simulator designed to help users prepare for technical and non-technical job interviews. This application conducts a dynamic, one-on-one conversation and then generates detailed feedback on the candidate's performance.</p>
+
+                            <div class="project-image-container">
+                                <img src="img/portfolio/PixelPipeline_WORKFLOW_Job_Interview_Agentic_LLMs.png"
+                                    alt="Agentic AI Job Interviewer Workflow Diagram">
+                            </div>
 
                             <div class="video-container" style="margin: 40px 0;">
                                 <h5 style="margin-top: 0; margin-bottom: 20px;">Video Demonstration</h5>
@@ -78,36 +73,23 @@
                                 </div>
                             </div>
 
+                            <h2>The Architecture: Autonomous Recruiting Intelligence</h2>
+                            <p>This project introduces a next-generation AI interviewer designed to handle end-to-end technical screenings. By moving beyond simple chatbots to an agentic, multi-node architecture, we enable deep reasoning and dynamic follow-up capabilities that simulate a human-level interviewing experience.</p>
+
                             <h5>Intelligent Serving Layer</h5>
-                            <p>The system is accessed through a high-performance modern web stack. A Vite + React
-                                frontend provides a responsive, low-latency interface for candidates, while a robust
-                                FastAPI backend manages real-time communication and orchestrates complex logical flows
-                                through secure REST endpoints.</p>
+                            <p>The system is accessed through a high-performance modern web stack. A Vite + React frontend provides a responsive, low-latency interface for candidates, while a robust FastAPI backend manages real-time communication and orchestrates complex logical flows through secure REST endpoints.</p>
 
                             <h5>Durable State & Caching</h5>
-                            <p>Maintaining the context of a 60-minute interview requires sophisticated state management.
-                                We utilize PostgreSQL with a mature ORM for persistent candidate data and session
-                                history, paired with Redis for ultra-fast response caching and transient state
-                                coordination during the live session.</p>
+                            <p>Maintaining the context of a 60-minute interview requires sophisticated state management. We utilize PostgreSQL with a mature ORM for persistent candidate data and session history, paired with Redis for ultra-fast response caching and transient state coordination during the live session.</p>
 
                             <h5>Agentic Orchestration with LangGraph</h5>
-                            <p>At the core lies our LangGraph-based Brain Node. This orchestrator manages a
-                                sophisticated multi-agent team: a Question Agent for behavioral probing, a Coding Agent
-                                for technical verification, and a Conclusion Agent for final evaluation. The Decision
-                                Node dynamically routes the conversation flow based on candidate performance and session
-                                state.</p>
+                            <p>At the core lies our LangGraph-based Brain Node. This orchestrator manages a sophisticated multi-agent team: a Question Agent for behavioral probing, a Coding Agent for technical verification, and a Conclusion Agent for final evaluation. The Decision Node dynamically routes the conversation flow based on candidate performance and session state.</p>
 
                             <h5>Generative Intelligence Model</h5>
-                            <p>The entire cognitive process is fueled by OpenAI's GPT-4o. This industry-leading model
-                                enables the agents to understand subtle nuances in candidate answers, provide helpful
-                                hints during coding challenges, and maintain a professional, empathetic tone throughout
-                                the interview.</p>
+                            <p>The entire cognitive process is fueled by OpenAI's GPT-4o. This industry-leading model enables the agents to understand subtle nuances in candidate answers, provide helpful hints during coding challenges, and maintain a professional, empathetic tone throughout the interview.</p>
 
                             <h5>MLOps Monitoring & Governance</h5>
-                            <p>This is a production-ready ecosystem. We implement a full observability stack featuring
-                                Prometheus and Grafana for system telemetry, while MLflow tracks model metrics, prompt
-                                performance, and agent decision-making logic to ensure continuous improvement and
-                                ethical neutrality.</p>
+                            <p>This is a production-ready ecosystem. We implement a full observability stack featuring Prometheus and Grafana for system telemetry, while MLflow tracks model metrics, prompt performance, and agent decision-making logic to ensure continuous improvement and ethical neutrality.</p>
                         </div>
                     </div>
                 </div>

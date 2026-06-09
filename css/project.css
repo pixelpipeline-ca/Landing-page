@@ -13,13 +13,13 @@ header {
 }
 
 .project-image-container {
-    margin-top: 50px;
-    margin-bottom: 50px;
-    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.2);
-    border-radius: 12px;
+    margin-top: 24px;
+    margin-bottom: 24px;
+    border-radius: 0;
     overflow: hidden;
-    background: #fff;
-    border: 1px solid #eee;
+    background: transparent;
+    border: none;
+    box-shadow: none;
 }
 
 .project-image-container img {
@@ -30,40 +30,65 @@ header {
 .detailed-description {
     text-align: left;
     margin-top: 40px;
-}
-
-.detailed-description h5 {
-    font-size: 14px;
-    font-weight: 700;
-    color: #fff;
-    margin-top: 30px;
-    margin-bottom: 5px;
-    text-transform: uppercase;
-    line-height: 1.1;
-}
-
-.detailed-description p {
-    font-size: 13px;
-    line-height: 1.8;
-    color: #fff;
-    margin-bottom: 30px;
-    text-transform: none;
-    /* Sentence case */
-    font-family: 'Lato', sans-serif;
-}
-
-.title h2 {
-    margin-top: 0;
-    font-weight: 700;
-    color: #fff;
-}
-
-.title h6 {
-    color: #fff;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+    font-size: 16px;
+    line-height: 1.5;
+    color: #c9d1d9;
+    background-color: #0d1117;
+    padding: 32px;
+    border-radius: 0;
+    border: 1px solid #30363d;
 }
 
 .detailed-description h2 {
-    color: #fff;
+    color: #c9d1d9;
+    padding-bottom: 0.3em;
+    font-size: 1.5em;
+    border-bottom: 1px solid #21262d;
+    font-weight: 600;
+    margin-top: 24px;
+    margin-bottom: 16px;
+    text-transform: none !important;
+}
+
+.detailed-description h5 {
+    font-size: 1.25em;
+    color: #c9d1d9;
+    font-weight: 600;
+    margin-top: 24px;
+    margin-bottom: 16px;
+    text-transform: none;
+    line-height: 1.25;
+}
+
+.detailed-description p {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #c9d1d9;
+    margin-bottom: 16px;
+    font-family: inherit;
+    text-transform: none;
+}
+
+.detailed-description ul {
+    padding-left: 2em;
+    margin-top: 0;
+    margin-bottom: 16px;
+    color: #c9d1d9;
+}
+
+.detailed-description li {
+    margin-top: 0.25em;
+}
+
+.detailed-description code {
+    padding: 0.2em 0.4em;
+    margin: 0;
+    font-size: 85%;
+    background-color: rgba(110, 118, 129, 0.4);
+    border-radius: 6px;
+    color: #c9d1d9;
+    font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace;
 }
 
 /* Ensure navbar brand img stays small as in home page */
