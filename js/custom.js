@@ -17,28 +17,34 @@ $(document).ready(function() {
     /*--------------------------------------------------
         Initialize portfolio filter
         ---------------------------------------------------*/
-        $('#portfolio-grid').mixItUp();
+        if ($.fn.mixItUp) {
+            $('#portfolio-grid').mixItUp();
+        }
     
     /*--------------------------------------------------
         Open video modal
         ---------------------------------------------------*/
-        $('#popup-youtube').magnificPopup({
-            disableOn: 700,
-            type: 'iframe',
-            mainClass: 'mfp-fade',
-            removalDelay: 160,
-            preloader: false,
-            fixedContentPos: false
-        });
+        if ($.fn.magnificPopup) {
+            $('#popup-youtube').magnificPopup({
+                disableOn: 700,
+                type: 'iframe',
+                mainClass: 'mfp-fade',
+                removalDelay: 160,
+                preloader: false,
+                fixedContentPos: false
+            });
+        }
         
     /*--------------------------------------------------
         Page Scroll Features 
         ---------------------------------------------------*/
-        smoothScroll.init({
-            speed: 1000,
-            updateURL: true,
-            offset: 50
-        });
+        if (typeof smoothScroll !== 'undefined') {
+            smoothScroll.init({
+                speed: 1000,
+                updateURL: true,
+                offset: 50
+            });
+        }
     
     $(window).scroll(function () {
         if ($(this).scrollTop() > 130) {
