@@ -81,6 +81,17 @@
                                 architecture, we enable deep reasoning and dynamic follow-up capabilities that simulate
                                 a human-level interviewing experience.</p>
 
+                            <h5>Pattern: Layered Architecture</h5>
+                            <p>This application strictly adheres to the <b>Layered Architecture pattern</b>, dividing
+                                the
+                                system into distinct horizontal layers (Client, API, Orchestration, Data).</p>
+
+                            <p>This pattern was chosen to enforce a clear separation of concerns. By
+                                isolating the UI, the REST API, the AI multi-agent orchestration (LangGraph), and the
+                                database into distinct layers, we ensure that changes in one layer (like updating the AI
+                                models or swapping the database) do not cascade into the others. This makes the system
+                                highly maintainable, secure, and easier to test independently.</p>
+
                             <h5>Intelligent Serving Layer</h5>
                             <p>The system is accessed through a high-performance modern web stack. A Vite + React
                                 frontend provides a responsive, low-latency interface for candidates, while a robust
