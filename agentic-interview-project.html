@@ -81,17 +81,6 @@
                                 architecture, we enable deep reasoning and dynamic follow-up capabilities that simulate
                                 a human-level interviewing experience.</p>
 
-                            <h5>Pattern: Layered Architecture</h5>
-                            <p>This application strictly adheres to the <b>Layered Architecture pattern</b>, dividing
-                                the
-                                system into distinct horizontal layers (Client, API, Orchestration, Data).</p>
-
-                            <p>This pattern was chosen to enforce a clear separation of concerns. By
-                                isolating the UI, the REST API, the AI multi-agent orchestration (LangGraph), and the
-                                database into distinct layers, we ensure that changes in one layer (like updating the AI
-                                models or swapping the database) do not cascade into the others. This makes the system
-                                highly maintainable, secure, and easier to test independently.</p>
-
                             <h5>Intelligent Serving Layer</h5>
                             <p>The system is accessed through a high-performance modern web stack. A Vite + React
                                 frontend provides a responsive, low-latency interface for candidates, while a robust
@@ -122,7 +111,41 @@
                                 Prometheus and Grafana for system telemetry, while MLflow tracks model metrics, prompt
                                 performance, and agent decision-making logic to ensure continuous improvement and
                                 ethical neutrality.</p>
+
                             <h2>The Engineering</h2>
+
+                            <h5>Architectural Pattern: Layered Architecture (N-tier)</h5>
+                            <p>The system follows the Layered Architecture (N-tier) pattern, ensuring a clean separation
+                                of concerns across different modules of the application:</p>
+                            <ul>
+                                <li><b>Presentation Layer:</b> The Vite + React frontend handles candidate interactions,
+                                    displaying real-time streaming responses and interview interfaces.</li>
+                                <li><b>API Layer:</b> The FastAPI backend manages HTTP/SSE connections, strict payload
+                                    validation, and interacts directly with the orchestration engine.</li>
+                                <li><b>Orchestration Layer:</b> The LangGraph multi-agent engine processes interview
+                                    states, routes conversational paths, and formulates prompts for the Foundation Model
+                                    (OpenAI GPT-4o).</li>
+                                <li><b>Data Layer:</b> PostgreSQL, Redis, and MLflow serve as the foundation for state
+                                    management, rapid caching, token analytics, and model governance.</li>
+                            </ul>
+
+                            <p>This layered design maps to the following operational workflow stages:</p>
+                            <ul>
+                                <li><b>Initialize:</b> The user interface sets up candidate profiles and establishes
+                                    session state in the database.</li>
+                                <li><b>Route:</b> The LangGraph Decision Node intelligently processes turn counts and
+                                    conversation history to dictate the next agentic action.</li>
+                                <li><b>Generate:</b> Specialized sub-agents (GPT-4o) generate targeted questions
+                                    (coding, theory, or manager) based on strict prompt constraints.</li>
+                                <li><b>Store:</b> Real-time transcripts, telemetry, and exact token usage are
+                                    asynchronously persisted in PostgreSQL and cached in Redis for low-latency
+                                    retrieval.</li>
+                                <li><b>Serve:</b> The FastAPI backend streams text back to the React UI via Server-Sent
+                                    Events (SSE) for a fluid, natural conversational experience.</li>
+                                <li><b>Govern:</b> All AI invocations, tokens, and logic durations are tracked via
+                                    MLflow and Prometheus/Grafana for enterprise-grade observability and lineage.</li>
+                            </ul>
+
                             <h5>Architecture Diagram</h5>
                             <div class="project-image-container">
                                 <img src="img/portfolio/PixelPipeline_Architecture_Eng_Job_Interview_Agentic_LLMs.png"

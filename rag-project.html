@@ -57,7 +57,9 @@
                     <div class="col-md-10 col-md-offset-1">
                         <div class="detailed-description">
                             <h2 style="margin-top: 0;">Enterprise RAG Architecture on Databricks</h2>
-                            <p style="color: #6e7681; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 24px;">Scalable Knowledge Retrieval from Disparate Data Sources</p>
+                            <p
+                                style="color: #6e7681; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 24px;">
+                                Scalable Knowledge Retrieval from Disparate Data Sources</p>
 
                             <div class="project-image-container">
                                 <img src="img/portfolio/PixelPipeline_WORKFLOW_LLM_RAG.png"
@@ -116,6 +118,80 @@
                                 presented here has been anonymized and adapted using publicly available datasets
                                 (including DoorDash sample data) while preserving the original architectural patterns,
                                 technical design decisions, and implementation approach.</p>
+
+                            <h2>The Engineering</h2>
+
+                            <h5>Architectural Pattern: Layered Architecture (N-tier)</h5>
+                            <p>The system follows the <b>Layered Architecture (N-tier)</b> pattern, ensuring a clean
+                                separation of concerns across different modules of the application:</p>
+
+                            <ul>
+                                <li><b>Presentation Layer:</b> The Streamlit frontend handles user interactions and
+                                    displays
+                                    formatted responses.</li>
+                                <li><b>Application Layer:</b> The LangChain orchestrator processes queries, retrieves
+                                    context,
+                                    and formulates prompts, while Databricks Jobs handle automated data ingestion
+                                    workflows.</li>
+                                <li><b>Data Access Layer:</b> Databricks Vector Search and Foundation Model APIs provide
+                                    interfaces to retrieve semantic context and generate text/OCR.</li>
+                                <li><b>Data Layer:</b> Delta Tables, Unity Catalog, and MLflow serve as the foundation
+                                    for raw
+                                    data storage, processed vectors, and model governance.</li>
+                            </ul>
+
+                            <p>This layered design maps to the following operational workflow stages:</p>
+
+                            <ul>
+                                <li><b>Ingest:</b> Supports structured (Delta), unstructured (PDF/Images), and Real-time
+                                    data
+                                    sources.</li>
+                                <li><b>Process:</b> Databricks Jobs and AutoLoader handle chunking and embedding
+                                    generation.
+                                    <ul>
+                                        <li>Text is split using <code>RecursiveCharacterTextSplitter</code>.</li>
+                                        <li>Images are processed via GPT-4o Vision for text extraction.</li>
+                                    </ul>
+                                </li>
+                                <li><b>Store:</b> Data is persisted in Delta Tables and indexed in <b>Databricks Vector
+                                        Search</b>
+                                    for low-latency retrieval.</li>
+                                <li><b>Serve:</b> The Streamlit frontend interacts with the RAG chain, which retrieves
+                                    context
+                                    and generates answers via Llama-3.</li>
+                                <li><b>Govern:</b> All data and models are managed through Unity Catalog for
+                                    enterprise-grade
+                                    security and lineage.</li>
+                            </ul>
+
+                            <h5>Architecture Diagram</h5>
+                            <div class="project-image-container">
+                                <img src="img/portfolio/PixelPipeline_Architecture_Eng_Job_Interview_Agentic_LLMs.png"
+                                    alt="Agentic AI Job Interviewer Workflow Diagram">
+                            </div>
+                            <div class="project-image-container">
+                                <img src="img/portfolio/PixelPipeline_Architecture_LLM_RAG.png"
+                                    alt="Agentic AI Job Interviewer Workflow Diagram">
+                            </div>
+
+                            <h5>Component Diagram</h5>
+                            <div class="project-image-container">
+                                <img src="img/portfolio/PixelPipeline_Component_diagram_Eng_Job_Interview_Agentic_LLMs.png"
+                                    alt="Agentic AI Job Interviewer Workflow Diagram">
+                            </div>
+                            <div class="project-image-container">
+                                <img src="img/portfolio/PixelPipeline_Component_Diagram_LLM_RAG.png"
+                                    alt="Agentic AI Job Interviewer Workflow Diagram">
+                            </div>
+                            <h5>Sequence Diagram</h5>
+                            <div class="project-image-container">
+                                <img src="img/portfolio/PixelPipeline_Sequence_diagram_Eng_Job_Interview_Agentic_LLMs.png"
+                                    alt="Agentic AI Job Interviewer Workflow Diagram">
+                            </div>
+                            <div class="project-image-container">
+                                <img src="img/portfolio/PixelPipeline_Sequence_Diagram_LLM_RAG.png"
+                                    alt="Agentic AI Job Interviewer Workflow Diagram">
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -79,6 +79,7 @@ header {
 
 .detailed-description li {
     margin-top: 0.25em;
+    text-transform: none;
 }
 
 .detailed-description code {
