@@ -74,22 +74,49 @@
                             </div>
 
                             <h2>The Architecture: The "Input Firewall" Approach</h2>
-                            <p>In highly regulated industries like healthcare, safety cannot be an afterthought. Our architecture moves beyond simple chat interfaces to an explicit, graph-based routing system. Every cognitive step and safety check is definitively controlled, ensuring maximum security and auditability.</p>
+                            <p>Utilizes an explicit, graph-based routing system with definitive safety checks to ensure maximum security and auditability.</p>
 
                             <h5>Zero-Trust Data Privacy</h5>
-                            <p>Protecting Personally Identifiable Information (PII) is non-negotiable. Our system intercepts and aggressively redacts sensitive data—like contact information or financial details—before it ever reaches the AI processing layer, guaranteeing absolute data sovereignty.</p>
+                            <p>Intercepts and aggressively redacts sensitive PII before it reaches the AI processing layer.</p>
 
                             <h5>Deterministic Security Controls</h5>
-                            <p>We implement hard-wired security barriers that instantly recognize and block harmful topics or prompt injection attempts. This immediate short-circuiting not only prevents hijacking but also ensures predictable, safe behavior at all times.</p>
+                            <p>Hard-wired security barriers instantly block harmful topics and prompt injection attempts.</p>
 
                             <h5>Human-in-the-Loop Oversight</h5>
-                            <p>For sensitive operations such as booking appointments or processing payments, the AI automatically pauses its workflow. It requires explicit, human-in-the-loop approval before proceeding, placing the final decision firmly in your control.</p>
+                            <p>Automatically pauses sensitive operations (like booking or payments) for explicit human approval.</p>
 
                             <h5>Automated Compliance Validation</h5>
-                            <p>Ensure regulatory alignment on every interaction. Our deterministic output validators automatically append mandatory medical disclaimers and compliance notices to all AI-generated responses, mitigating risk and ensuring consistency.</p>
+                            <p>Deterministic validators automatically append mandatory medical disclaimers to all AI responses.</p>
 
                             <h5>Resilient Error Handling</h5>
-                            <p>Designed for real-world reliability, our agent gracefully manages rejections and workflow interruptions. When human overseers deny a sensitive action, the AI seamlessly pivots, providing clear, empathetic explanations to the end user without crashing.</p>
+                            <p>Gracefully manages workflow interruptions and rejected actions without crashing.</p>
+
+                            <h5>Architectural Pattern: Layered Architecture (N-tier)</h5>
+                            <p>The system is built on a clean <b>Layered Architecture (N-tier)</b>, ensuring separation of concerns:</p>
+                            <ul>
+                                <li><b>Presentation Layer:</b> Handles user interaction and empathetic error messaging.</li>
+                                <li><b>Routing & Safety Layer:</b> Graph-based routing with explicit security and PII redacting nodes.</li>
+                                <li><b>Intelligence Layer:</b> Secure foundation model processing restricted by deterministic guardrails.</li>
+                            </ul>
+
+                            <h5>Functional Requirements</h5>
+                            <ul>
+                                <li><b>Data Redaction:</b> Intercept and redact Personally Identifiable Information (PII) automatically.</li>
+                                <li><b>Security Filtering:</b> Detect and block prompt injections and harmful topics instantly.</li>
+                                <li><b>Action Pausing:</b> Pause execution on sensitive tasks for Human-in-the-Loop approval.</li>
+                                <li><b>Compliance Enforcement:</b> Automatically append medical disclaimers to generated responses.</li>
+                            </ul>
+
+                            <h5>Non-Functional Requirements</h5>
+                            <ul>
+                                <li><b>Performance:</b> speed and responsiveness via short-circuited deterministic safety checks.</li>
+                                <li><b>Security:</b> protection against unauthorized access enforced by a Zero-Trust Input Firewall.</li>
+                                <li><b>Usability:</b> ease of use provided by clear, empathetic error handling for end users.</li>
+                                <li><b>Reliability:</b> system stability and availability maintained by resilient graph-based routing.</li>
+                                <li><b>Scalability:</b> ability to handle growth while enforcing strict guardrails at scale.</li>
+                                <li><b>Maintainability:</b> ease of updates and fixes using explicit, modular safety nodes.</li>
+                                <li><b>Portability:</b> ability to run in different environments due to isolated validator components.</li>
+                            </ul>
                         </div>
                     </div>
                 </div>

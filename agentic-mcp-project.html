@@ -74,22 +74,49 @@
                             </div>
 
                             <h2>The Architecture: Secure & Extensible Agentic Intelligence</h2>
-                            <p>This project showcases a modern approach to building AI agents. By utilizing LangGraph and the Model Context Protocol (MCP), we create autonomous systems that don't just chat, but take meaningful actions across your enterprise stack—all while keeping a human firmly in the loop.</p>
+                            <p>Uses LangGraph and MCP to create autonomous agents that take action across the enterprise stack with human-in-the-loop oversight.</p>
 
                             <h5>Dynamic Tool Integration</h5>
-                            <p>Our architecture moves beyond static integrations. Using the Model Context Protocol (MCP), the agent dynamically discovers and connects to various tools—from real-time web search and live weather data to secure, local database queries and deterministic math operations.</p>
+                            <p>Agents dynamically discover and connect to real-time search, local databases, and custom tools via MCP.</p>
 
                             <h5>Human-in-the-Loop (HIL) Safety</h5>
-                            <p>Security and trust are paramount. Our intelligent orchestrator proactively pauses execution before interacting with sensitive external tools. This requires explicit user approval, giving you complete control and visibility over the agent's actions before they happen.</p>
+                            <p>Proactively pauses sensitive execution for explicit user approval, ensuring complete control and security.</p>
 
                             <h5>Real-Time Streaming & Transparency</h5>
-                            <p>Experience the agent's reasoning process as it happens. Our high-performance interface streams responses instantly. Built-in tool visibility lets users see exactly when the agent is querying a database or searching the web, fostering trust and understanding.</p>
+                            <p>Streams responses instantly and provides built-in tool visibility to foster user trust.</p>
 
                             <h5>Enterprise-Grade Observability</h5>
-                            <p>To ensure continuous improvement and reliability, the entire ecosystem is monitored by industry-standard MLOps tools. Every decision, tool invocation, and AI prompt is securely tracked, providing deep insights into the agent's performance and decision-making logic.</p>
+                            <p>Monitored by industry-standard MLOps tools to securely track every decision, prompt, and tool invocation.</p>
 
                             <h5>Robust State Management</h5>
-                            <p>Long-running tasks and complex workflows are supported by persistent memory management. Our system seamlessly maintains conversation history, allowing users to ask follow-up questions while the agent retains context across multiple autonomous steps.</p>
+                            <p>Maintains seamless conversation history and context across multiple autonomous steps.</p>
+
+                            <h5>Architectural Pattern: Layered Architecture (N-tier)</h5>
+                            <p>The system is built on a clean <b>Layered Architecture (N-tier)</b>, ensuring separation of concerns:</p>
+                            <ul>
+                                <li><b>Presentation Layer:</b> High-performance streaming interface for real-time interaction.</li>
+                                <li><b>Orchestration Layer:</b> LangGraph engine managing human-in-the-loop workflows.</li>
+                                <li><b>Integration Layer:</b> MCP acting as a dynamic bridge to external and local tools.</li>
+                            </ul>
+
+                            <h5>Functional Requirements</h5>
+                            <ul>
+                                <li><b>Dynamic Tool Discovery:</b> Connect to external and local tools via the Model Context Protocol.</li>
+                                <li><b>Autonomous Actions:</b> Execute tasks like web search and database queries automatically.</li>
+                                <li><b>Human-in-the-loop:</b> Pause for explicit user approval before executing sensitive tools.</li>
+                                <li><b>Real-time Streaming:</b> Stream reasoning processes and tool invocations instantly.</li>
+                            </ul>
+
+                            <h5>Non-Functional Requirements</h5>
+                            <ul>
+                                <li><b>Performance:</b> speed and responsiveness via real-time streaming and robust state management.</li>
+                                <li><b>Security:</b> protection against unauthorized access enforced by Human-in-the-Loop safety pauses.</li>
+                                <li><b>Usability:</b> ease of use provided by transparent tool visibility and seamless conversation history.</li>
+                                <li><b>Reliability:</b> system stability and availability maintained by rigorous MLOps observability.</li>
+                                <li><b>Scalability:</b> ability to handle growth via dynamic MCP integrations.</li>
+                                <li><b>Maintainability:</b> ease of updates and fixes using modular LangGraph architecture.</li>
+                                <li><b>Portability:</b> ability to run in different environments due to standardized Model Context Protocol.</li>
+                            </ul>
                         </div>
                     </div>
                 </div>

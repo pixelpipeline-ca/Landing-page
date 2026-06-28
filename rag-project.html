@@ -67,10 +67,9 @@
                             </div>
 
                             <h5>The Architecture: Unified Knowledge Retrieval</h5>
-                            <p>Retrieval-Augmented Generation (RAG) is the gold standard for connecting LLMs to private
-                                corporate data. This project showcases a production-grade RAG system built on
-                                Databricks, designed to process and query millions of documents from both structured and
-                                unstructured sources with sub-second latency.</p>
+                            <p>A production-grade RAG system on Databricks that securely connects LLMs to corporate
+                                data, processing millions of structured and unstructured documents with sub-second
+                                latency.</p>
 
                             <div class="video-container" style="margin: 40px 0;">
                                 <h5 style="margin-top: 0; margin-bottom: 20px;">Video Demonstration</h5>
@@ -82,42 +81,30 @@
                             </div>
 
                             <h5>Multi-Modal Ingestion Strategy</h5>
-                            <p>We start by ingesting data from every corner of the enterprise: SQL databases for
-                                structured records, PDF and Image stores for unstructured documents, and high-frequency
-                                real-time event streams. This comprehensive ingestion ensures the AI has a 360-degree
-                                view of your organization's knowledge.</p>
+                            <p>Ingests structured (SQL), unstructured (PDFs, Images), and real-time streaming data for a
+                                comprehensive, 360-degree enterprise knowledge view.</p>
 
                             <h5>Serverless Processing with Databricks</h5>
-                            <p>The heavy lifting of data preparation is handled by Databricks Workflows. We utilize
-                                Autoloader for effortless incremental file capture and Delta Lake notebooks for scalable
-                                ETL jobs, ensuring that new information is processed, cleaned, and updated in real-time
-                                without managing infrastructure.</p>
+                            <p>Leverages Databricks Workflows, Autoloader, and Delta Lake for automated, scalable ETL
+                                and real-time data processing without infrastructure overhead.</p>
 
                             <h5>Vector DB & Embedding Pipeline</h5>
-                            <p>Insight is only as good as the retrieval. We implement a custom chunking and embedding
-                                pipeline that transforms raw text into multi-dimensional vectors. These are stored in a
-                                high-performance Vector Database (Vector Search), enabling semantic relationship
-                                matching that far exceeds traditional keyword search.</p>
+                            <p>Custom chunking and embedding pipelines transform text into vectors, stored in Databricks
+                                Vector Search for highly accurate semantic matching that exceeds traditional keyword
+                                search.</p>
 
                             <h5>Deployable Serving Layer</h5>
-                            <p>Accessing the knowledge is seamless. We serve LLaMA models (by Meta) through a
-                                dual-interface approach: Databricks Apps for technical users and a custom Streamlit
-                                frontend for business stakeholders, providing a natural language interface to the entire
-                                corporate knowledge base.</p>
+                            <p>Serves Meta's LLaMA models via Databricks Apps for technical users and a Streamlit
+                                frontend for business stakeholders, offering seamless natural language access.</p>
 
                             <h5>Orchestration & Governance</h5>
-                            <p>The entire flow is managed by LangChain, orchestrating document splitting and vector
-                                store interactions. Governance is baked in via Unity Catalog, while MLflow provides a
-                                complete audit trail of model versions, embeddings, and overall system performance.</p>
+                            <p>Managed by LangChain for orchestration, with built-in governance via Unity Catalog and
+                                complete audit trails (model versions, embeddings) via MLflow.</p>
 
                             <h5>Privacy and Anonymization Notice</h5>
-                            <p>This architecture was originally designed and deployed as part of an Enterprise Knowledge
-                                Assistant initiative for a major Canadian financial institution. To preserve client
-                                confidentiality and comply with privacy obligations, all proprietary datasets,
-                                documents, and business entities have been removed from this demonstration. The version
-                                presented here has been anonymized and adapted using publicly available datasets
-                                (including DoorDash sample data) while preserving the original architectural patterns,
-                                technical design decisions, and implementation approach.</p>
+                            <p>Originally deployed for a major financial institution, this demo uses anonymized and
+                                public datasets (e.g., DoorDash) to preserve client confidentiality while demonstrating
+                                real-world architectural patterns.</p>
 
                             <h2>The Engineering</h2>
                             <div class="project-image-container">
@@ -126,8 +113,8 @@
                             </div>
 
                             <h5>Architectural Pattern: Layered Architecture (N-tier)</h5>
-                            <p>The system follows the <b>Layered Architecture (N-tier)</b> pattern, ensuring a clean
-                                separation of concerns across different modules of the application:</p>
+                            <p>The system is built on a clean <b>Layered Architecture (N-tier)</b>, ensuring separation
+                                of concerns:</p>
 
                             <ul>
                                 <li><b>Presentation Layer:</b> The Streamlit frontend handles user interactions and
@@ -166,6 +153,25 @@
                                 <li><b>Govern:</b> All data and models are managed through Unity Catalog for
                                     enterprise-grade
                                     security and lineage.</li>
+                            </ul>
+
+                            <h5>Functional Requirements</h5>
+                            <ul>
+                                <li><b>Query Processing:</b> Accept natural language queries and return accurate, context-aware answers.</li>
+                                <li><b>Multi-Format Ingestion:</b> Extract text from SQL databases, PDFs, and images.</li>
+                                <li><b>Semantic Search:</b> Retrieve relevant documents based on meaning, not just keywords.</li>
+                                <li><b>Source Attribution:</b> Provide citations or links to the original documents for generated answers.</li>
+                            </ul>
+
+                            <h5>Non-Functional Requirements</h5>
+                            <ul>
+                                <li><b>Performance:</b> speed and responsiveness via Databricks Vector Search and semantic retrieval.</li>
+                                <li><b>Security:</b> protection against unauthorized access and governance enforced by Unity Catalog.</li>
+                                <li><b>Usability:</b> ease of use provided by a natural language interface on Streamlit.</li>
+                                <li><b>Reliability:</b> system stability and availability maintained by fault-tolerant Databricks Workflows.</li>
+                                <li><b>Scalability:</b> ability to handle growth leveraging Databricks serverless compute and Delta Lake.</li>
+                                <li><b>Maintainability:</b> ease of updates and fixes using LangChain orchestration and MLflow tracking.</li>
+                                <li><b>Portability:</b> ability to run in different environments due to the modular N-tier architecture.</li>
                             </ul>
 
                             <h5>Architecture Diagram</h5>

@@ -65,40 +65,52 @@
                             </div>
 
                             <h5>The Architecture: An Intelligent Ecosystem</h5>
-                            <p>This project showcases a unified, end-to-end data intelligence ecosystem built on
-                                Microsoft Fabric. We've replaced fragmented silos with a seamless flow that transforms
-                                high-velocity IoT telemetry into real-time business insights.</p>
+                            <p>A unified data intelligence ecosystem built on Microsoft Fabric that transforms high-velocity IoT telemetry into real-time insights.</p>
 
                             <h5>High-Velocity Ingestion</h5>
-                            <p>Everything begins at the edge. IoT sensors beam telemetry into Azure IoT Hub, our secure
-                                enterprise gateway. Azure Event Hubs and Stream Analytics work in tandem to capture data
-                                in motion, ensuring zero loss even at extreme scales.</p>
+                            <p>Captures telemetry at scale via Azure IoT Hub, Event Hubs, and Stream Analytics with zero data loss.</p>
                                 
                             <h5>Serverless Orchestration</h5>
-                            <p>Azure Functions serve as the connective tissue of the pipeline. These serverless
-                                microservices pre-process raw JSON streams, ensuring data is cleaned, validated, and
-                                formatted before it ever touches our storage layer.</p>
+                            <p>Azure Functions serve as serverless microservices to pre-process, clean, and validate raw JSON streams.</p>
 
                             <h5>The Unified Lakehouse (OneLake)</h5>
-                            <p>At the center lies Microsoft Fabric's OneLake. We implement a robust Medallion
-                                Architecture: Raw data lands in Bronze, is refined into schema-validated Silver, and
-                                finally aggregated into business-ready Gold datasets. All stored using the open Delta
-                                format for maximum performance and interoperability.</p>
+                            <p>Implements a Medallion Architecture (Bronze/Silver/Gold) on OneLake using the open Delta format.</p>
 
                             <h5>Advanced AI & Engineering</h5>
-                            <p>Synapse Data Engineering handles the heavy lifting of large-scale transformations.
-                                Meanwhile, Synapse Data Science deploys machine learning models directly onto the
-                                Lakehouse, identifying anomalies and trends before they become critical issues.</p>
+                            <p>Synapse Data Engineering and Data Science deploy large-scale transformations and ML anomaly detection models directly on the Lakehouse.</p>
 
                             <h5>Intelligent Serving & Action</h5>
-                            <p>Insight is only valuable if it leads to action. Power BI provides live executive
-                                dashboards, while Data Activator acts as an automated sentinel, triggering instant
-                                alerts in Microsoft Teams the moment a threshold is breached.</p>
+                            <p>Power BI provides live dashboards while Data Activator triggers instant Microsoft Teams alerts on threshold breaches.</p>
 
                             <h5>Enterprise-Grade Governance</h5>
-                            <p>This isn't just a pipeline; it's a secure environment. The entire flow is governed by
-                                Microsoft Purview, protected by Azure Active Directory, and secured via Key Vault,
-                                ensuring compliance and data integrity at every step.</p>
+                            <p>Governed by Microsoft Purview, secured via Azure Active Directory and Key Vault.</p>
+
+                            <h5>Architectural Pattern: Layered Architecture (N-tier)</h5>
+                            <p>The system is built on a clean <b>Layered Architecture (N-tier)</b>, ensuring separation of concerns:</p>
+                            <ul>
+                                <li><b>Data Ingestion Layer:</b> Captures high-velocity IoT streams via Azure IoT Hub and Event Hubs.</li>
+                                <li><b>Processing Layer:</b> Handles real-time parsing with Azure Functions and AI modeling via Synapse.</li>
+                                <li><b>Storage & Serving Layer:</b> Microsoft Fabric OneLake Lakehouse coupled with Power BI and Data Activator.</li>
+                            </ul>
+
+                            <h5>Functional Requirements</h5>
+                            <ul>
+                                <li><b>IoT Telemetry Ingestion:</b> Capture and stream high-velocity sensor data with zero loss.</li>
+                                <li><b>Anomaly Detection:</b> Apply Machine Learning models to identify real-time anomalies.</li>
+                                <li><b>Automated Alerting:</b> Trigger instant notifications via Microsoft Teams when thresholds are breached.</li>
+                                <li><b>Data Lakehouse Management:</b> Organize data into Bronze, Silver, and Gold tiers using Delta Lake.</li>
+                            </ul>
+
+                            <h5>Non-Functional Requirements</h5>
+                            <ul>
+                                <li><b>Performance:</b> speed and responsiveness via Azure Stream Analytics and serverless Azure Functions.</li>
+                                <li><b>Security:</b> protection against unauthorized access enforced by Azure Active Directory and Key Vault.</li>
+                                <li><b>Usability:</b> ease of use provided by automated Data Activator triggers and Power BI.</li>
+                                <li><b>Reliability:</b> system stability and availability maintained by unified Microsoft Fabric infrastructure.</li>
+                                <li><b>Scalability:</b> ability to handle growth via limitless OneLake storage and scalable Synapse engineering.</li>
+                                <li><b>Maintainability:</b> ease of updates and fixes using centralized Microsoft Purview governance.</li>
+                                <li><b>Portability:</b> ability to run in different environments due to the open Delta storage format.</li>
+                            </ul>
                         </div>
                     </div>
                 </div>

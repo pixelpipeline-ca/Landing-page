@@ -67,10 +67,7 @@
                             </div>
 
                             <h5>The Architecture: Precision Model Tuning</h5>
-                            <p>To achieve enterprise-grade performance, generic base models must be tailored to specific
-                                domains. This project demonstrates a vertical AI approach using NVIDIA’s
-                                high-performance stack to fine-tune, evaluate, and deploy localized LLMs with maximum
-                                efficiency.</p>
+                            <p>A vertical AI approach using NVIDIA’s high-performance stack to fine-tune, evaluate, and deploy localized LLMs.</p>
 
                             <div class="video-container" style="margin: 40px 0;">
                                 <h5 style="margin-top: 0; margin-bottom: 20px;">Video Demonstration</h5>
@@ -82,33 +79,19 @@
                             </div>
 
                             <h5>Base Model Inference & Quantization</h5>
-                            <p>The journey begins with the Tiny Llama base model. Before fine-tuning, we optimize for
-                                memory efficiency using Bitsandbytes 4-bit NF4 quantization. This allows us to load and
-                                train powerful models on standard hardware without compromising the core weights or
-                                response quality.</p>
+                            <p>Optimizes Tiny Llama with 4-bit NF4 quantization to train powerful models on standard hardware efficiently.</p>
 
                             <h5>Advanced Tokenization & Preprocessing</h5>
-                            <p>Clean data is the foundation of high-quality models. We leverage Hugging Face Datasets
-                                for robust data management and implement mature prompt templating strategies to ensure
-                                the model learns consistent, helpful response patterns during the training phase.</p>
+                            <p>Leverages Hugging Face Datasets and mature prompt templating to ensure consistent model learning.</p>
 
                             <h5>Parameter-Efficient Fine-Tuning (PEFT)</h5>
-                            <p>Rather than training billions of parameters from scratch, we utilize PEFT and LoRA
-                                (Low-Rank Adaptation). This strategy only updates a small subset of model weights,
-                                drastically reducing training time and compute requirements while achieving performance
-                                comparable to full model fine-tuning.</p>
+                            <p>Utilizes PEFT and LoRA to update a small subset of weights, drastically reducing compute requirements.</p>
 
                             <h5>Rigorous Model Evaluation</h5>
-                            <p>Insights must be quantified. Every fine-tuned model undergoes comprehensive evaluation
-                                using ROUGE (recall), BLEU (precision), and Perplexity (predictive confidence) metrics,
-                                ensuring the output is clinically accurate and naturally fluent before it reaches
-                                production.</p>
+                            <p>Evaluates models comprehensively using ROUGE, BLEU, and Perplexity metrics before production deployment.</p>
 
                             <h5>NVIDIA-Native Production Serving</h5>
-                            <p>For high-availability serving, we deploy via the NVIDIA Triton Inference Server. Running
-                                within Docker containers and presented through a Streamlit interface, the entire
-                                infrastructure is optimized for NVIDIA RTX 4060 GPUs, leveraging CUDA and SMI for
-                                real-time performance monitoring.</p>
+                            <p>Deploys via NVIDIA Triton Inference Server optimized for RTX GPUs with real-time CUDA monitoring.</p>
 
                             <h2>The Engineering</h2>
 
@@ -141,6 +124,25 @@
                                     generate and display answers.</li>
                                 <li><b>Evaluate:</b> Output quality is measured locally using ROUGE, BLEU, and
                                     Perplexity metrics.</li>
+                            </ul>
+
+                            <h5>Functional Requirements</h5>
+                            <ul>
+                                <li><b>Model Quantization:</b> Load and process large language models using 4-bit NF4 quantization.</li>
+                                <li><b>Efficient Fine-Tuning:</b> Train domain-specific models using LoRA and PEFT without full retraining.</li>
+                                <li><b>Automated Evaluation:</b> Score model outputs locally against ROUGE, BLEU, and Perplexity metrics.</li>
+                                <li><b>Production Inference:</b> Serve models with high availability using NVIDIA Triton Inference Server.</li>
+                            </ul>
+
+                            <h5>Non-Functional Requirements</h5>
+                            <ul>
+                                <li><b>Performance:</b> speed and responsiveness via CUDA optimization and Triton dynamic batching.</li>
+                                <li><b>Security:</b> protection against unauthorized access handled through secure local network deployment.</li>
+                                <li><b>Usability:</b> ease of use provided by a responsive Streamlit conversational interface.</li>
+                                <li><b>Reliability:</b> system stability and availability maintained by robust Docker containerization.</li>
+                                <li><b>Scalability:</b> ability to handle growth via RTX GPU scaling and efficient LoRA adapter swapping.</li>
+                                <li><b>Maintainability:</b> ease of updates and fixes using Hugging Face pipelines and standardized tokenization.</li>
+                                <li><b>Portability:</b> ability to run in different environments due to isolated Docker and PyTorch environments.</li>
                             </ul>
 
                             <h5>Architecture Diagram</h5>

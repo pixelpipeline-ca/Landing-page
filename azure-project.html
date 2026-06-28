@@ -62,22 +62,49 @@
                             </div>
 
                             <h5>The Architecture: From Legacy to Cloud-Scale</h5>
-                            <p>This project represents a critical mission for a client looking to modernize and consolidate their disparate on-premises data systems. We engineered a robust Cloud-Native platform that bridges the gap between traditional SQL environments and the Era of Big Data.</p>
+                            <p>A robust cloud-native platform that modernizes and consolidates on-premises SQL environments into Azure.</p>
                             
                             <h5>On-Premises Ingestion</h5>
-                            <p>Everything starts at the source. We migrate critical business data from legacy on-premises Microsoft SQL Server databases using Azure Data Factory. This architecture ensures high-throughput, secure ingestion while maintaining full data integrity as it moves from on-prem to the cloud.</p>
+                            <p>Securely migrates legacy Microsoft SQL Server data using Azure Data Factory with high throughput and data integrity.</p>
                             
                             <h5>Modern Processing Power</h5>
-                            <p>We leverage the best-in-class processing engines: Azure Databricks for massive-scale Spark-based data transformations and Azure Synapse for enterprise-grade data warehousing. This dual-engine approach provides the flexibility to handle both unstructured batch processing and highly structured business analytics.</p>
+                            <p>Leverages Azure Databricks for massive-scale Spark transformations and Azure Synapse for enterprise data warehousing.</p>
 
                             <h5>Medallion Lakehouse Architecture</h5>
-                            <p>At the center of the platform is a unified Azure Data Lake Gen2 account, organized into a rigorous Medallion pattern. Raw data lands in Bronze, is schema-validated and cleaned into Silver, and finally aggregated into optimized Gold datasets, creating a single, reliable source of truth for the organization.</p>
+                            <p>Organizes raw data into a Bronze, Silver, and Gold Medallion pattern within Azure Data Lake Gen2.</p>
 
                             <h5>Enterprise-Grade Insight Serving</h5>
-                            <p>Fueling decision-making across the board, Power BI dashboards are directly connected to the Gold layer. This ensures that every stakeholder, from analysts to executives, has access to the most up-to-date KPIs through intuitive, real-time reporting.</p>
+                            <p>Connects Power BI directly to the Gold layer for real-time executive dashboarding and KPIs.</p>
 
                             <h5>Unified Governance & Security</h5>
-                            <p>This isnt just a pipeline; it is a secured data ecosystem. We utilize Databricks Unity Catalog for centralized governance, Azure Active Directory for consistent identity management, and Azure Key Vault to safeguard all sensitive connection credentials and secrets.</p>
+                            <p>Secured via Databricks Unity Catalog, Azure Active Directory, and Azure Key Vault for credentials.</p>
+
+                            <h5>Architectural Pattern: Layered Architecture (N-tier)</h5>
+                            <p>The system is built on a clean <b>Layered Architecture (N-tier)</b>, ensuring separation of concerns:</p>
+                            <ul>
+                                <li><b>Data Ingestion Layer:</b> Moves on-prem data via Azure Data Factory.</li>
+                                <li><b>Processing Layer:</b> Handles large-scale transformations via Azure Databricks and Synapse.</li>
+                                <li><b>Storage & Serving Layer:</b> ADLS Gen2 Lakehouse and Power BI for intuitive reporting.</li>
+                            </ul>
+
+                            <h5>Functional Requirements</h5>
+                            <ul>
+                                <li><b>Data Migration:</b> Extract data from on-premises SQL servers to Azure cloud securely.</li>
+                                <li><b>Data Transformation:</b> Clean and aggregate data into a Medallion architecture (Bronze, Silver, Gold).</li>
+                                <li><b>Business Intelligence:</b> Provide real-time dashboards and KPIs via Power BI.</li>
+                                <li><b>Secret Management:</b> Securely store connection credentials and tokens without hardcoding.</li>
+                            </ul>
+
+                            <h5>Non-Functional Requirements</h5>
+                            <ul>
+                                <li><b>Performance:</b> speed and responsiveness via Azure Databricks Spark clusters.</li>
+                                <li><b>Security:</b> protection against unauthorized access enforced by Azure Active Directory and Key Vault.</li>
+                                <li><b>Usability:</b> ease of use provided by seamless Power BI dashboard integrations.</li>
+                                <li><b>Reliability:</b> system stability and availability maintained by managed Azure Data Factory pipelines.</li>
+                                <li><b>Scalability:</b> ability to handle growth via elastic Azure Synapse data warehousing.</li>
+                                <li><b>Maintainability:</b> ease of updates and fixes using centralized Unity Catalog governance.</li>
+                                <li><b>Portability:</b> ability to run in different environments due to decoupled storage (ADLS) and compute (Databricks).</li>
+                            </ul>
                         </div>
                     </div>
                 </div>

@@ -65,53 +65,55 @@
                             </div>
 
                             <h5>The Architecture: Scalable Real-time Intelligence</h5>
-                            <p>This ETL system is built to handle the complexity of modern business applications that
-                                generate data across multiple disparate platforms. By leveraging AWS’s serverless
-                                offerings, we provide a high-scale, low-maintenance environment for real-time data
-                                processing and analytics.</p>
+                            <p>A high-scale, serverless ETL system on AWS designed for real-time analytics across disparate business applications.</p>
 
                             <h5>Multi-Source Ingestion</h5>
-                            <p>We start by capturing a wide variety of business data from across the ecosystem:
-                                Unstructured files in AWS S3, document-based data in MongoDB, and relational records in
-                                PostgreSQL. This heterogeneous ingestion strategy ensures that no application data is
-                                left behind.</p>
+                            <p>Captures data from heterogeneous sources like S3, MongoDB, and PostgreSQL ensuring no application data is left behind.</p>
 
                             <h5>Error Handling</h5>
-                            <p>Lambda consumes messages from SQS. If execution fails or times out, the message becomes
-                                visible again in SQS and is retried automatically. After the configured max receive
-                                count is reached, the message is moved to the SQS Dead-Letter Queue and an alert is
-                                triggered through SNS/CloudWatch. This preserves the original payload and prevents
-                                silent data loss.</p>
+                            <p>Utilizes SQS Dead-Letter Queues and SNS/CloudWatch alerts for automatic retries and data loss prevention.</p>
 
                             <h5>Real-Time Streaming Backbone</h5>
-                            <p>Using a custom-built Python API, data is orchestrated and streamed into an AWS MSK
-                                (Managed Streaming for Kafka) cluster. Here, messages are categorized into dedicated
-                                topics, allowing for parallel, high-throughput processing and zero-loss queuing of
-                                real-time events.</p>
+                            <p>Orchestrates and streams events into AWS MSK for parallel, high-throughput processing.</p>
 
                             <h5>Serverless Processing (AWS Glue)</h5>
-                            <p>The core of the ETL flow is powered by AWS Glue. We design multi-stage pipelines that
-                                perform schema discovery, data cleaning, and complex transformations without the need to
-                                manage any server infrastructure. This allows for effortless scaling as data volumes
-                                grow.</p>
+                            <p>Powers multi-stage ETL pipelines for schema discovery and complex transformations without infrastructure overhead.</p>
 
                             <h5>Three-Layer Medallion Storage</h5>
-                            <p>For consistent data reliability, we implement a tiered storage architecture. Raw event
-                                data is stored in the Bronze layer, transformed into the intermediate Silver layer for
-                                analysis, and finally enriched and optimized into Parquet format in the Gold layer
-                                within the AWS Glue Catalog.</p>
+                            <p>Implements a tiered Bronze/Silver/Gold storage architecture optimized in Parquet format via AWS Glue Catalog.</p>
 
                             <h5>Advanced Analytics & Serving Ecosystem</h5>
-                            <p>We empower different business needs with a versatile serving layer. Analysts can perform
-                                ad-hoc queries on billions of rows with AWS Athena, visualization experts can build live
-                                KPIs in AWS QuickSight, and the refined data is seamlessly integrated with Snowflake and
-                                MySQL for specialized downstream applications.</p>
+                            <p>Serves diverse business needs through AWS Athena, QuickSight, Snowflake, and MySQL integrations.</p>
 
                             <h5>Security & Monitoring Watchtower</h5>
-                            <p>The entire platform is proactively monitored and governed. We utilize AWS CloudWatch for
-                                real-time performance metrics, AWS Trusted Advisor for architectural optimizations,
-                                CloudTrail for audit logging, and AWS GuardDuty for advanced threat detection and
-                                continuous security monitoring.</p>
+                            <p>Proactively governed using CloudWatch, Trusted Advisor, CloudTrail, and GuardDuty.</p>
+
+                            <h5>Architectural Pattern: Layered Architecture (N-tier)</h5>
+                            <p>The system is built on a clean <b>Layered Architecture (N-tier)</b>, ensuring separation of concerns:</p>
+                            <ul>
+                                <li><b>Data Ingestion Layer:</b> Captures streams and batch loads via AWS SQS and MSK.</li>
+                                <li><b>Processing Layer:</b> Serverless transformations managed by AWS Glue and Lambda.</li>
+                                <li><b>Storage & Serving Layer:</b> Medallion architecture (Bronze/Silver/Gold) queried via AWS Athena.</li>
+                            </ul>
+
+                            <h5>Functional Requirements</h5>
+                            <ul>
+                                <li><b>Data Ingestion:</b> Capture streaming and batch data from S3, MongoDB, and PostgreSQL.</li>
+                                <li><b>Data Transformation:</b> Clean and structure data into Bronze, Silver, and Gold tiers.</li>
+                                <li><b>Error Recovery:</b> Automatically retry failed executions and route persistent errors to a DLQ.</li>
+                                <li><b>Analytics Serving:</b> Provide accessible data endpoints for ad-hoc querying and visualization.</li>
+                            </ul>
+
+                            <h5>Non-Functional Requirements</h5>
+                            <ul>
+                                <li><b>Performance:</b> speed and responsiveness via AWS MSK high-throughput streaming and Parquet optimizations.</li>
+                                <li><b>Security:</b> protection against unauthorized access managed by AWS GuardDuty and CloudTrail.</li>
+                                <li><b>Usability:</b> ease of use via serverless operations requiring minimal infrastructure management.</li>
+                                <li><b>Reliability:</b> system stability and availability maintained by SQS automated retries and DLQs.</li>
+                                <li><b>Scalability:</b> ability to handle growth seamlessly using AWS Glue serverless compute.</li>
+                                <li><b>Maintainability:</b> ease of updates and fixes via unified AWS CloudWatch telemetry.</li>
+                                <li><b>Portability:</b> ability to run in different environments supported by modular data outputs to Snowflake/MySQL.</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
