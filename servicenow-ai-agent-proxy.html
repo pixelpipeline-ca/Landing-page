@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>ServiceNow AI Agent Proxy & Optimization Layer | PixelPipeline</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="ServiceNow AI Agent Proxy & Optimization Layer - Project Detail">
+    <meta name="author" content="PixelPipeline" />
+
+    <!-- Load Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="icon" href="img/favicon.png" type="image/png" />
+
+    <link rel="stylesheet" type="text/css" href="css/project.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-fixed-top" id="header-nav">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="index.html">
+                        <img src="img/logo-white.png" class="logo-light"
+                            alt="PixelPipeline - Data Engineering and AI Solutions">
+                        <img src="img/logo.png" class="logo-dark"
+                            alt="PixelPipeline - Data Engineering and AI Solutions">
+                    </a>
+                </div>
+                <div class="primary-menu">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                        aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <div id="navbar" class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav">
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="index.html#architecture-portfolio">Portfolio</a></li>
+                            <li><a href="index.html#about">About</a></li>
+                            <li><a href="index.html#contact">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <div class="main-head">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1">
+                        <div class="detailed-description">
+
+                            <h2>The Problem and the Pain Point</h2>
+                            <p>Integrating AI Agents directly with ServiceNow (SNOW) creates severe bottlenecks. Direct
+                                queries can cause 2-minute delays, breaking conversational flow. Massive, unoptimized
+                                payloads bloat network traffic, and unchecked AI queries risk triggering API rate
+                                limits, degrading performance for human operators. Optimizing latency between Copilot
+                                and SNOW is essential for a fluid AI experience.</p>
+                            <h2 style="margin-top: 0;">The Solution and The Process</h2>
+                            <p>A high-performance middleware proxy brokering requests between Copilot AI Agents and our
+                                ServiceNow instance. Decoupling the AI from the system of record resolves latency issues
+                                and protects IT operations from API exhaustion.</p>
+
+                            <div class="project-image-container">
+                                <img src="img/portfolio/PixelPipeline_Copilot-Servicenow-Perf.png"
+                                    alt="ServiceNow AI Agent Proxy Workflow Diagram">
+                            </div>
+
+                            <h2 style="margin-top: 0;">The Results and the Business Value</h2>
+                            <p>The implementation of this proxy layer delivered immediate, transformative improvements
+                                to the AI agent's responsiveness and overall system maintainability.</p>
+                            <ul>
+                                <li><b>Unprecedented Speed:</b> User waiting times shrank dramatically from over 2
+                                    minutes down to just <b>58ms</b> (on cache miss), and effectively <b>0ms</b>
+                                    (instantaneous) on Redis cache hits.</li>
+                                <li><b>Architectural Decoupling:</b> A true, scalable architecture cleanly separates the
+                                    AI presentation layer from the system of record, protecting backend resources from
+                                    API exhaustion.</li>
+                                <li><b>Operational Excellence:</b> The modular, N-tier design ensures easy debugging,
+                                    streamlined maintenance, and robust governance.</li>
+                                <li><b>Client Satisfaction:</b> The fluid, instantaneous AI experience has led to high
+                                    user adoption, restored trust in the platform, and a highly satisfied client.</li>
+                            </ul>
+                            <div class="video-container" style="margin: 40px 0;">
+                                <h5 style="margin-top: 0; margin-bottom: 20px;">Video Demonstration</h5>
+                                <div class="embed-responsive embed-responsive-16by9"
+                                    style="box-shadow: 0 10px 30px rgba(0,0,0,0.15); border-radius: 8px; overflow: hidden;">
+                                    <iframe class="embed-responsive-item"
+                                        src="https://www.youtube.com/embed/GVtY4NJ-ZRA" allowfullscreen></iframe>
+                                </div>
+                            </div>
+
+                            <h2>The Architecture: Intelligent Proxy & Caching</h2>
+                            <p>A proxy intercepting and optimizing requests between Copilot and ServiceNow.</p>
+
+                            <h5>Intelligent Serving Layer</h5>
+                            <p>Azure Functions backend for secure, serverless brokering and fast API orchestration.</p>
+
+                            <h5>Durable State & Caching</h5>
+                            <p>Azure Managed Redis for transient state coordination and sub-60ms delivery.</p>
+
+                            <h5>Agentic Orchestration</h5>
+                            <p>Copilot AI Agents query the proxy to fetch data without straining core systems.</p>
+
+                            <h5>Integration Model</h5>
+                            <p>Optimized REST APIs filter and serialize only essential fields, minimizing network I/O.
+                            </p>
+
+                            <h5>Monitoring & Governance</h5>
+                            <p>Resilient lazy-loading patterns handle dependency failures and ensure uptime.</p>
+
+                            <h2>The Engineering</h2>
+                            <div class="project-image-container">
+                                <img src="img/PixelPipeline_Architecture_Engineering.jpg"
+                                    alt="Agentic AI Job Interviewer Workflow Diagram">
+                            </div>
+
+                            <h5>Architectural Pattern: Layered Architecture (N-tier)</h5>
+                            <p>The Layered Architecture (N-tier) pattern cleanly separates application concerns:</p>
+                            <ul>
+                                <li><b>Client Layer:</b> Copilot AI Agent handles interactions and sends queries.</li>
+                                <li><b>Proxy Layer:</b> Azure Functions manages requests, filters payloads, and
+                                    orchestrates APIs.</li>
+                                <li><b>Caching Layer:</b> Azure Managed Redis intercepts requests to reduce latency.
+                                </li>
+                                <li><b>Data Layer:</b> ServiceNow acts as the definitive source of truth for cache
+                                    misses.</li>
+                            </ul>
+
+                            <p>Operational workflow stages:</p>
+                            <ul>
+                                <li><b>Initialize:</b> Agent queries the <code>snow_proxy</code> endpoint.</li>
+                                <li><b>Intercept:</b> Proxy checks the <code>pixelpipeline-redis</code> instance.</li>
+                                <li><b>Serve (Hit):</b> Cached data (&lt;60ms) is returned directly.</li>
+                                <li><b>Fetch (Miss):</b> Proxy forwards an optimized <code>GET</code> to ServiceNow.
+                                </li>
+                                <li><b>Store & Return:</b> Response is cached (60s TTL) and delivered to the agent.</li>
+                            </ul>
+
+                            <h5>Functional Requirements</h5>
+                            <ul>
+                                <li><b>Request Brokering:</b> Intercept Copilot AI Agent queries to ServiceNow.</li>
+                                <li><b>Payload Optimization:</b> Filter and serialize essential fields to minimize
+                                    network I/O.</li>
+                                <li><b>In-Memory Caching:</b> Use Redis to instantly serve identical queries.</li>
+                                <li><b>Dynamic Fallback:</b> Gracefully bypass cache if Redis is unavailable.</li>
+                            </ul>
+
+                            <h5>Non-Functional Requirements</h5>
+                            <ul>
+                                <li><b>Performance:</b> Sub-60ms latency via Azure Managed Redis.</li>
+                                <li><b>Reliability:</b> High availability via serverless lazy-loading patterns.</li>
+                                <p>This point refers to how the proxy ensures it never goes down, even if one of its
+                                    dependencies fails. Here is a breakdown of what that means in this specific project:
+                                </p>
+
+                                <p><b>Serverless:</b> Because the proxy is built on Azure Functions, it doesn't rely on
+                                    a single, fragile server. The cloud provider automatically provisions resources and
+                                    spins up new instances to handle traffic as it comes in. If a piece of hardware
+                                    fails in the Azure data center, our app automatically shifts to healthy hardware
+                                    without you doing anything.</p>
+
+                                <p><b>"Lazy-Loading Patterns"</b> Normally, when an application starts up, it
+                                    immediately tries to connect to all its databases and caches (like Redis) globally
+                                    at the very top of the script. If Redis is down for maintenance or network issues,
+                                    the entire application will instantly crash on startup, causing a complete outage.
+                                </p>
+
+                                <p>"Lazy-loading" means we delay that connection. The proxy only attempts to import and
+                                    connect to Redis at the exact moment a request comes in.</p>
+
+                                <p>Why this creates "High Availability" (Reliability): Because we lazy-load the Redis
+                                    connection inside a try/except block, if Redis is completely down, the Azure
+                                    Function
+                                    does not crash. Instead, it gracefully catches the error, skips the cache, and
+                                    forwards
+                                    the query directly to ServiceNow.</p>
+
+                                <p>This means that even in a worst-case scenario where our cache layer fails, the AI
+                                    Agent keeps working seamlessly with zero downtime (it just runs at normal speed
+                                    instead of
+                                    cached speed).</p>
+
+                                <li><b>Security:</b> Strict endpoint validation and URL-encoded connections.</li>
+                                <li><b>Scalability:</b> Absorb traffic spikes without hitting ServiceNow rate limits.
+                                </li>
+                                <li><b>Maintainability:</b> Clean modularity through N-tier architecture.</li>
+                            </ul>
+
+                            <h5>Key Technical Optimizations</h5>
+
+                            <p><b>1. Payload Filtering:</b> Forces serialization of essential fields via
+                                <code>sysparm_fields</code>, shrinking payloads from 200KB to 2KB.
+                            </p>
+                            <pre
+                                style="background-color: #272822; color: #f8f8f2; padding: 15px; border-radius: 5px; margin-top: 10px; margin-bottom: 20px;"><code>params = {
+    "sysparm_limit": "50",
+    "sysparm_fields": "number,short_description,priority,incident_state,sys_updated_on",
+    "sysparm_display_value": "true"
+}</code></pre>
+
+                            <p><b>2. Resilient Lazy-Loading:</b> The <code>redis</code> library initializes lazily to
+                                prevent startup crashes. If Redis fails, it gracefully degrades to a direct proxy.</p>
+
+                            <p><b>3. URI Encoding:</b> Special characters in the access key are explicitly URL-encoded
+                                (e.g., <code>%3D</code>) to ensure stable Azure Managed Redis connections.</p>
+
+
+                            <h5>Architecture Diagram</h5>
+                            <div class="project-image-container">
+                                <img src="img/portfolio/PixelPipeline_Copilot-Servicenow-Before.jpg"
+                                    alt="Agentic AI Job Interviewer Workflow Diagram">
+                            </div>
+                            <div class="project-image-container">
+                                <img src="img/portfolio/Pixelpipeline-copilot-snow-before.png"
+                                    alt="Agentic AI Job Interviewer Workflow Diagram">
+                            </div>
+
+                            <div class="project-image-container">
+                                <img src="img/portfolio/PixelPipeline_Copilot-Servicenow-After.jpg"
+                                    alt="Agentic AI Job Interviewer Workflow Diagram">
+                            </div>
+                            <div class="project-image-container">
+                                <img src="img/portfolio/Pixelpipeline-copilot-snow-after.png"
+                                    alt="Agentic AI Job Interviewer Workflow Diagram">
+                            </div>
+
+                            <ul>
+                                <li><b> The Decoupling: </b>The Copilot Studio Agent is strictly a presentation layer.
+                                    It
+                                    handles the
+                                    chat, but nothing else.</li>
+                                <li><b> The Governance (The Bouncer):</b> APIM is standing right at the front door,
+                                    protecting our
+                                    compute layer and the client's budget.</li>
+                                <li><b> The Intelligence (The Brains):</b> The Azure Function is clearly the
+                                    orchestrator,
+                                    making the
+                                    smart routing decisions to that 50ms fast path.</li>
+                                <li><b> The Observability (The Daylight):</b> Application Insights is sweeping up every
+                                    trace,
+                                    proving that this is a fully governed, enterprise-ready system, not a black-box
+                                    AI toy.</li>
+                            </ul>
+
+                            <h5>Component Diagram</h5>
+                            <div class="project-image-container">
+                                <img src="img/portfolio/PixelPipeline_Copilot-Servicenow-Components-Diagram.jpg"
+                                    alt="Agentic AI Job Interviewer Workflow Diagram">
+                            </div>
+                            <div class="project-image-container">
+                                <img src="img/portfolio/Pixelpipeline-copilot-snow-component-diagram.png"
+                                    alt="Agentic AI Job Interviewer Workflow Diagram">
+                            </div>
+
+                            <h5>Sequence Diagram</h5>
+                            <div class="project-image-container">
+                                <img src="img/portfolio/PixelPipeline_Copilot-Servicenow-Sequence-Diagram.jpg"
+                                    alt="Agentic AI Job Interviewer Workflow Diagram">
+                            </div>
+                            <div class="project-image-container">
+                                <img src="img/portfolio/Pixelpipeline-copilot-snow-sequence-diagram.png"
+                                    alt="Agentic AI Job Interviewer Workflow Diagram">
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="call-to-action">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5 col-md-offset-2">
+                    <h4>Building the Future of Data-Driven Decisions.</h4>
+                </div>
+                <div class="col-md-2 text-center">
+                    <a href="index.html#architecture-portfolio" class="btn btn-cta">Back to Portfolio</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container text-center">
+            <img src="img/logo-white.png" class="logo-footer" alt="PixelPipeline - Data Engineering & AI Consulting">
+            <p style="color: #666; font-size: 14px; margin-top: 20px;">© 2025 PixelPipeline Inc. — Precision.
+                Innovation. Excellence.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="js/smooth-scroll.js"></script>
+    <script src="js/custom.js"></script>
+</body>
+
+</html>
