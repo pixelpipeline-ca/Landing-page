@@ -56,8 +56,36 @@
                 <div class="row">
                     <div class="col-md-10 col-md-offset-1">
                         <div class="detailed-description">
-                            <h2 style="margin-top: 0;">Enterprise Medical AI with Strict Guardrails</h2>
-                            <p>A production-ready healthcare AI assistant designed to autonomously handle complex tasks while enforcing uncompromising safety and privacy. This solution demonstrates how to deploy reasoning engines that strictly protect patient data and adhere to enterprise compliance rules.</p>
+                            <h1>Enterprise Medical AI with Strict Guardrails</h1>
+                            <h2>The Problem, The Pain Point</h2>
+                            <p>Enterprises grapple with the complexity of AI decision-making, requiring deterministic
+                                safety, unwavering compliance, and transparent audit trails. Traditional AI applications
+                                often fail to deliver the required level of security and reliability for
+                                mission-critical
+                                workflows.</p>
+                            <h2>The Solution, The Process</h2>
+                            <p>A production-ready healthcare AI assistant designed to autonomously handle complex tasks
+                                while enforcing uncompromising safety and privacy. This solution demonstrates how to
+                                deploy reasoning engines that strictly protect patient data and adhere to enterprise
+                                compliance rules.</p>
+                            <h2>The Results, The Business Value</h2>
+                            <p>This Proof of Concept successfully demonstrated that Generative AI can be deployed in
+                                highly regulated healthcare environments without compromising security or patient trust.
+                            </p>
+                            <ul>
+                                <li><b>Uncompromising Compliance:</b> Achieved a 100% success rate in intercepting and
+                                    redacting Protected Health Information (PHI/PII) before it reached the external LLM
+                                    layer.</li>
+                                <li><b>Deterministic Safety:</b> The "Input Firewall" reliably blocked all simulated
+                                    prompt injection attacks and out-of-bounds medical inquiries.</li>
+                                <li><b>Safe Autonomous Action:</b> Successfully completed routine tasks autonomously,
+                                    while correctly identifying and pausing sensitive operations (like prescription
+                                    changes or billing) for mandatory Human-in-the-Loop approval.</li>
+                                <li><b>Enterprise Trust:</b> Proved to stakeholders that AI can be heavily governed,
+                                    providing a transparent audit trail and ensuring all outputs include mandatory
+                                    medical disclaimers.</li>
+                            </ul>
+
 
                             <div class="project-image-container">
                                 <img src="img/portfolio/PixelPipeline_WORKFLOW_Medical_Assitant_Agentic_LLMs_Guardials.png"
@@ -74,49 +102,132 @@
                             </div>
 
                             <h2>The Architecture: The "Input Firewall" Approach</h2>
-                            <p>Utilizes an explicit, graph-based routing system with definitive safety checks to ensure maximum security and auditability.</p>
+                            <p>Utilizes an explicit, graph-based routing system with definitive safety checks to ensure
+                                maximum security and auditability.</p>
 
                             <h5>Zero-Trust Data Privacy</h5>
-                            <p>Intercepts and aggressively redacts sensitive PII before it reaches the AI processing layer.</p>
+                            <p>Intercepts and aggressively redacts sensitive PII before it reaches the AI processing
+                                layer.</p>
 
                             <h5>Deterministic Security Controls</h5>
-                            <p>Hard-wired security barriers instantly block harmful topics and prompt injection attempts.</p>
+                            <p>Hard-wired security barriers instantly block harmful topics and prompt injection
+                                attempts.</p>
 
                             <h5>Human-in-the-Loop Oversight</h5>
-                            <p>Automatically pauses sensitive operations (like booking or payments) for explicit human approval.</p>
+                            <p>Automatically pauses sensitive operations (like booking or payments) for explicit human
+                                approval.</p>
 
                             <h5>Automated Compliance Validation</h5>
-                            <p>Deterministic validators automatically append mandatory medical disclaimers to all AI responses.</p>
+                            <p>Deterministic validators automatically append mandatory medical disclaimers to all AI
+                                responses.</p>
 
                             <h5>Resilient Error Handling</h5>
                             <p>Gracefully manages workflow interruptions and rejected actions without crashing.</p>
 
+
+                            <h2>The Engineering</h2>
+                            <div class="project-image-container">
+                                <img src="img/PixelPipeline_Architecture_Engineering.jpg"
+                                    alt="Agentic AI Job Interviewer Workflow Diagram">
+                            </div>
                             <h5>Architectural Pattern: Layered Architecture (N-tier)</h5>
-                            <p>The system is built on a clean <b>Layered Architecture (N-tier)</b>, ensuring separation of concerns:</p>
+                            <p>The system is built on a clean <b>Layered Architecture (N-tier)</b>, ensuring separation
+                                of concerns:</p>
                             <ul>
-                                <li><b>Presentation Layer:</b> Handles user interaction and empathetic error messaging.</li>
-                                <li><b>Routing & Safety Layer:</b> Graph-based routing with explicit security and PII redacting nodes.</li>
-                                <li><b>Intelligence Layer:</b> Secure foundation model processing restricted by deterministic guardrails.</li>
+                                <li><b>Presentation Layer:</b> Handles user interaction and empathetic error messaging.
+                                </li>
+                                <li><b>Routing & Safety Layer:</b> Graph-based routing with explicit security and PII
+                                    redacting nodes.</li>
+                                <li><b>Intelligence Layer:</b> Secure foundation model processing restricted by
+                                    deterministic guardrails.</li>
                             </ul>
 
                             <h5>Functional Requirements</h5>
                             <ul>
-                                <li><b>Data Redaction:</b> Intercept and redact Personally Identifiable Information (PII) automatically.</li>
-                                <li><b>Security Filtering:</b> Detect and block prompt injections and harmful topics instantly.</li>
-                                <li><b>Action Pausing:</b> Pause execution on sensitive tasks for Human-in-the-Loop approval.</li>
-                                <li><b>Compliance Enforcement:</b> Automatically append medical disclaimers to generated responses.</li>
+                                <li><b>Data Redaction:</b> Intercept and redact Personally Identifiable Information
+                                    (PII) automatically.</li>
+                                <li><b>Security Filtering:</b> Detect and block prompt injections and harmful topics
+                                    instantly.</li>
+                                <li><b>Action Pausing:</b> Pause execution on sensitive tasks for Human-in-the-Loop
+                                    approval.</li>
+                                <li><b>Compliance Enforcement:</b> Automatically append medical disclaimers to generated
+                                    responses.</li>
                             </ul>
 
                             <h5>Non-Functional Requirements</h5>
                             <ul>
-                                <li><b>Performance:</b> speed and responsiveness via short-circuited deterministic safety checks.</li>
-                                <li><b>Security:</b> protection against unauthorized access enforced by a Zero-Trust Input Firewall.</li>
-                                <li><b>Usability:</b> ease of use provided by clear, empathetic error handling for end users.</li>
-                                <li><b>Reliability:</b> system stability and availability maintained by resilient graph-based routing.</li>
-                                <li><b>Scalability:</b> ability to handle growth while enforcing strict guardrails at scale.</li>
-                                <li><b>Maintainability:</b> ease of updates and fixes using explicit, modular safety nodes.</li>
-                                <li><b>Portability:</b> ability to run in different environments due to isolated validator components.</li>
+                                <li><b>Performance:</b> speed and responsiveness via short-circuited deterministic
+                                    safety checks.</li>
+                                <li><b>Security:</b> protection against unauthorized access enforced by a Zero-Trust
+                                    Input Firewall.</li>
+                                <li><b>Usability:</b> ease of use provided by clear, empathetic error handling for end
+                                    users.</li>
+                                <li><b>Reliability:</b> system stability and availability maintained by resilient
+                                    graph-based routing.</li>
+                                <li><b>Scalability:</b> ability to handle growth while enforcing strict guardrails at
+                                    scale.</li>
+                                <li><b>Maintainability:</b> ease of updates and fixes using explicit, modular safety
+                                    nodes.</li>
+                                <li><b>Portability:</b> ability to run in different environments due to isolated
+                                    validator components.</li>
                             </ul>
+
+
+                            <h5>Architecture Diagram</h5>
+                            <div class="project-image-container">
+                                <img src="img/portfolio/PixelPipeline_Architecture_Eng_Job_Interview_Agentic_LLMs.jpg"
+                                    alt="Agentic AI Job Interviewer Workflow Diagram">
+                            </div>
+                            <div class="project-image-container">
+                                <img src="img/portfolio/PixelPipeline_WORKFLOW_Overview_Medical_Assitant_Agentic_LLMs_Guardials.png"
+                                    alt="Agentic AI Job Interviewer Workflow Diagram">
+                            </div>
+
+                            <h5>Component Diagram</h5>
+                            <div class="project-image-container">
+                                <img src="img/portfolio/PixelPipeline_Component_diagram_Eng_Job_Interview_Agentic_LLMs.jpg"
+                                    alt="Agentic AI Job Interviewer Workflow Diagram">
+                            </div>
+                            <div class="project-image-container">
+                                <img src="img/portfolio/PixelPipeline_WORKFLOW_Medical_Assitant_Agentic_LLMs_Guardials_Components.png"
+                                    alt="Agentic AI Job Interviewer Workflow Diagram">
+                            </div>
+
+                            <h5>Node Diagram</h5>
+                            <div class="project-image-container">
+                                <img src="img/portfolio/PixelPipeline_Node_Diagram_Eng_Job_Interview_Agentic_LLMs.jpg"
+                                    alt="Agentic AI Job Interviewer Workflow Diagram">
+                            </div>
+                            <div class="project-image-container">
+                                <img src="img/portfolio/PixelPipeline_WORKFLOW_Medical_Assitant_Agentic_LLMs_Guardials-Node-Diagram.drawio.png"
+                                    alt="Agentic AI Job Interviewer Workflow Diagram">
+                            </div>
+
+                            <ul>
+                                <li>`Mask PII Data`: Intercepts input to redact sensitive PII (emails, credit cards)
+                                    before the LLM ever sees it.</li>
+                                <li>`Block Harmful and Injections`: Deterministically blocks prompt injections and
+                                    harmful topics, short-circuiting the LLM entirely to save API costs and prevent
+                                    hijacking.</li>
+                                <li>`Agent Brain` (LLM): The core decision engine that evaluates the sanitized input and
+                                    intelligently calls tools.</li>
+                                <li>`Execute Safe Tools`: Executes standard, read-only tools seamlessly.</li>
+                                <li>`Execute Sensitive Tools with Approval`: Natively pauses the graph execution using
+                                    LangGraph's `interrupt()` to require Human-in-the-Loop (HITL) approval for financial
+                                    and booking operations.</li>
+                                <li>`Append Medical Disclaimer`: An output validator that tacks on a mandatory medical
+                                    disclaimer to all AI responses.</li>
+                            </ul>
+
+                            <h5>Sequence Diagram</h5>
+                            <div class="project-image-container">
+                                <img src="img/portfolio/PixelPipeline_Sequence_diagram_Eng_Job_Interview_Agentic_LLMs.jpg"
+                                    alt="Agentic AI Job Interviewer Workflow Diagram">
+                            </div>
+                            <div class="project-image-container">
+                                <img src="img/portfolio/PixelPipeline_WORKFLOW_Medical_Assitant_Agentic_LLMs_Guardials-Sequence_diagram.png"
+                                    alt="Agentic AI Job Interviewer Workflow Diagram">
+                            </div>
                         </div>
                     </div>
                 </div>
