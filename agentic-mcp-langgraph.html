@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>MCP LangGraph Agentic | PixelPipeline</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="MCP LangGraph Agentic - Architecture and Flow">
+    <meta name="author" content="PixelPipeline" />
+
+    <!-- Load Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="icon" href="img/favicon.png" type="image/png" />
+
+    <link rel="stylesheet" type="text/css" href="css/project.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-fixed-top" id="header-nav">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="index.html">
+                        <img src="img/logo-white.png" class="logo-light"
+                            alt="PixelPipeline - Data Engineering and AI Solutions">
+                        <img src="img/logo.png" class="logo-dark"
+                            alt="PixelPipeline - Data Engineering and AI Solutions">
+                    </a>
+                </div>
+                <div class="primary-menu">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                        aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <div id="navbar" class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav">
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="index.html#architecture-portfolio">Portfolio</a></li>
+                            <li><a href="index.html#about">About</a></li>
+                            <li><a href="index.html#contact">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <div class="main-head">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1">
+                        <div class="detailed-description">
+                            <h1>MCP LangGraph Agentic</h1>
+                            <h2>The Problem, The Pain Point</h2>
+                            <p>Modern AI applications often struggle to securely connect to diverse external data
+                                sources and tools without writing brittle, custom integration code. There is a need for
+                                a standardized protocol to build agentic workflows that can seamlessly and securely
+                                access local and remote capabilities.</p>
+
+                            <h2>The Solution, The Process</h2>
+                            <p>This project demonstrates a powerful, modern architecture leveraging the <b>Model Context
+                                    Protocol (MCP)</b> to dynamically connect a LangGraph-powered reasoning agent to
+                                various tools. It implements a React frontend, FastAPI backend, and multiple standalone
+                                MCP servers (Math, Weather, Search, Database) communicating via standard input/output.
+                            </p>
+
+                            <h2>The Results, The Business Value</h2>
+                            <p>The project successfully highlights how agentic AI can be structured in a modular,
+                                scalable
+                                way.</p>
+                            <ul>
+                                <li><b>Standardized Tooling:</b> Utilizing MCP to separate tool logic from the core
+                                    reasoning engine, allowing tools to be written in any language and dynamically
+                                    registered.</li>
+                                <li><b>Human-in-the-Loop Oversight:</b> The LangGraph orchestrator proactively pauses
+                                    execution before interacting with external tools, emitting an interrupt event to
+                                    require explicit user approval.</li>
+                                <li><b>Streaming Capabilities:</b> Real-time SSE streaming delivers the agent's thought
+                                    process and tool execution visibility character-by-character to the custom-built
+                                    React frontend.</li>
+                                <li><b>Observability:</b> Fully integrated with MLflow via autologging. Every LLM
+                                    prompt, parameter, and tool invocation trace is securely logged for deep analysis.
+                                </li>
+                            </ul>
+
+                            <div class="project-image-container">
+                                <img src="img/portfolio/WORKFLOW_MCP_Agentic_LLMs.png"
+                                    alt="MCP LangGraph Workflow Diagram">
+                            </div>
+
+                            <div class="video-container" style="margin: 40px 0;">
+                                <h5 style="margin-top: 0; margin-bottom: 20px;">Video Demonstration</h5>
+                                <div class="embed-responsive embed-responsive-16by9"
+                                    style="box-shadow: 0 10px 30px rgba(0,0,0,0.15); border-radius: 8px; overflow: hidden;">
+                                    <iframe class="embed-responsive-item"
+                                        src="https://www.youtube.com/embed/WWBOXHH-02Y?si=89Z1Cy-honxazE3X"
+                                        allowfullscreen>
+                                    </iframe>
+                                </div>
+                            </div>
+
+                            <h2>The Architecture: The MCP Approach</h2>
+                            <p>The system utilizes an explicit, graph-based routing system with LangGraph, where tools
+                                are connected via standard I/O streams using the Model Context Protocol.</p>
+
+                            <h5>The Frontend (Vite + React)</h5>
+                            <p>A lightweight, high-performance React application featuring a custom-built premium
+                                aesthetic with glassmorphism and micro-animations. It consumes Server-Sent Events (SSE)
+                                from the backend to stream responses and parse tool-call visibility.</p>
+
+                            <h5>The Backend API (FastAPI)</h5>
+                            <p>A fully asynchronous FastAPI layer that exposes a <code>/chat</code> endpoint,
+                                efficiently handling multiple streams and long-running tool queries while coordinating
+                                with LangGraph.</p>
+
+                            <h5>The Brain (LangGraph & LangChain)</h5>
+                            <p>Uses <code>create_react_agent</code> to loop between reasoning (LLM) and acting. It
+                                utilizes <code>AsyncSqliteSaver</code> for conversational memory and handles
+                                Human-in-the-Loop interruptions.</p>
+
+                            <h5>The MCP Servers (Tools)</h5>
+                            <p>Tools are dynamically registered via a JSON configuration and spawned as child processes.
+                                Servers include Math (arithmetic), Weather (OpenMeteo REST API), Search (DuckDuckGo),
+                                and Database (local SQLite queries).</p>
+
+                            <h5>Resilient Error Handling</h5>
+                            <p>Gracefully manages workflow interruptions, rejected tool actions, and dynamic connection
+                                failures without crashing.</p>
+
+
+                            <h2>The Engineering</h2>
+                            <div class="project-image-container">
+                                <img src="img/PixelPipeline_Architecture_Engineering.jpg"
+                                    alt="Architecture Engineering Diagram">
+                            </div>
+
+                            <h5>Architectural Pattern: Layered Architecture (N-tier)</h5>
+                            <p>The system is built on a clean <b>Layered Architecture (N-tier)</b>, ensuring separation
+                                of concerns:</p>
+                            <ul>
+                                <li><b>Presentation Layer:</b> React UI with SSE streaming and tool visibility.</li>
+                                <li><b>Orchestration Layer:</b> FastAPI and LangGraph Engine with LLM integration.</li>
+                                <li><b>MCP Layer:</b> Multi-Server Client communicating over stdio to isolated tool
+                                    servers.</li>
+                                <li><b>Tracking Layer:</b> MLflow Server for comprehensive observability.</li>
+                            </ul>
+
+                            <h5>Functional Requirements</h5>
+                            <ul>
+                                <li><b>Dynamic Tools:</b> Connect and parse responses from multiple MCP servers
+                                    seamlessly.</li>
+                                <li><b>State Persistence:</b> Remember conversation history across multiple turns using
+                                    SQLite checkpointers.</li>
+                                <li><b>Action Pausing:</b> Pause execution on tool requests for Human-in-the-Loop
+                                    approval.</li>
+                                <li><b>Live Streaming:</b> Stream tokens to the frontend in real-time.</li>
+                            </ul>
+
+                            <h5>Non-Functional Requirements</h5>
+                            <ul>
+                                <li><b>Performance:</b> Asynchronous communication and streaming responses.</li>
+                                <li><b>Security:</b> Tool interactions require explicit user approval.</li>
+                                <li><b>Usability:</b> Premium frontend design with transparent tool-call visualizations.
+                                </li>
+                                <li><b>Observability:</b> Automatic tracking of traces, metrics, and parameters via
+                                    MLflow.</li>
+                                <li><b>Modularity:</b> Easily add or remove MCP servers without altering core logic.
+                                </li>
+                            </ul>
+
+
+                            <h5>Architecture Diagram</h5>
+                            <div class="project-image-container">
+                                <img src="img/portfolio/PixelPipeline_WORKFLOW_Agentic_LLMs_MCP.jpg"
+                                    alt="Architecture Overview Diagram">
+                            </div>
+                            <div class="project-image-container">
+                                <img src="img/portfolio/PixelPipeline_WORKFLOW_Agentic_LLMs_MCP.png"
+                                    alt="Workflow Overview Diagram">
+                            </div>
+
+                            <h5>Component Diagram</h5>
+                            <div class="project-image-container">
+                                <img src="img/portfolio/PixelPipeline_WORKFLOW_Agentic_LLMs_MCP_Components-diagram.jpg"
+                                    alt="Components Diagram">
+                            </div>
+                            <div class="project-image-container">
+                                <img src="img/portfolio/PixelPipeline_WORKFLOW_Agentic_LLMs_MCP_Components-diagram.png"
+                                    alt="Workflow Components Diagram">
+                            </div>
+
+                            <h5>Sequence Diagram</h5>
+                            <div class="project-image-container">
+                                <img src="img/portfolio/PixelPipeline_WORKFLOW_Agentic_LLMs_MCP-Sequence_diagram.jpg"
+                                    alt="Sequence Diagram">
+                            </div>
+                            <div class="project-image-container">
+                                <img src="img/portfolio/PixelPipeline_WORKFLOW_Agentic_LLMs_MCP-Sequence_diagram.png"
+                                    alt="Workflow Sequence Diagram">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="call-to-action">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5 col-md-offset-2">
+                    <h4>Building the Future of Data-Driven Decisions.</h4>
+                </div>
+                <div class="col-md-2 text-center">
+                    <a href="index.html#architecture-portfolio" class="btn btn-cta">Back to Portfolio</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container text-center">
+            <img src="img/logo-white.png" class="logo-footer" alt="PixelPipeline - Data Engineering & AI Consulting">
+            <p style="color: #666; font-size: 14px; margin-top: 20px;">© 2026 PixelPipeline Inc. — Precision.
+                Innovation. Excellence.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="js/smooth-scroll.js"></script>
+    <script src="js/custom.js"></script>
+</body>
+
+</html>
