@@ -1,22 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <title>Azure Data Engineering Project | PixelPipeline</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="AZ-Data-Engineering-End-to-End - Project Detail">
-    <meta name="author" content="PixelPipeline"/>
+    <meta name="author" content="PixelPipeline" />
 
     <!-- Load Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/font-awesome.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
-    <link rel="icon" href="img/favicon.png" type="image/png"/>
-    
+    <link rel="icon" href="img/favicon.png" type="image/png" />
+
     <link rel="stylesheet" type="text/css" href="css/project.css">
 </head>
+
 <body>
     <header>
         <nav class="navbar navbar-fixed-top" id="header-nav">
@@ -48,62 +50,85 @@
                 </div>
             </div>
         </nav>
-        
+
         <div class="main-head">
             <div class="container">
                 <div class="row">
                     <div class="col-md-10 col-md-offset-1">
                         <div class="detailed-description">
                             <h2 style="margin-top: 0;">AZ-Data-Engineering-End-to-End</h2>
-                            <p style="color: #6e7681; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 24px;">Modernizing On-Premises Infrastructure with Azure and Databricks</p>
-                        
+                            <p
+                                style="color: #6e7681; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 24px;">
+                                Modernizing On-Premises Infrastructure with Azure and Databricks</p>
+
                             <div class="project-image-container">
-                                <img src="img/portfolio/PixelPipeline_WORKFLOW_Azure.png" alt="Azure Data Engineering Workflow Diagram">
+                                <img src="img/portfolio/PixelPipeline_WORKFLOW_Azure.png"
+                                    alt="Azure Data Engineering Workflow Diagram">
                             </div>
 
                             <h5>The Architecture: From Legacy to Cloud-Scale</h5>
-                            <p>A robust cloud-native platform that modernizes and consolidates on-premises SQL environments into Azure.</p>
-                            
+                            <p>A robust cloud-native platform that modernizes and consolidates on-premises SQL
+                                environments into Azure.</p>
+
                             <h5>On-Premises Ingestion</h5>
-                            <p>Securely migrates legacy Microsoft SQL Server data using Azure Data Factory with high throughput and data integrity.</p>
-                            
+                            <p>Securely migrates legacy Microsoft SQL Server data using Azure Data Factory with high
+                                throughput and data integrity.</p>
+
                             <h5>Modern Processing Power</h5>
-                            <p>Leverages Azure Databricks for massive-scale Spark transformations and Azure Synapse for enterprise data warehousing.</p>
+                            <p>Leverages Azure Databricks for massive-scale Spark transformations and Azure Synapse for
+                                enterprise data warehousing.</p>
 
                             <h5>Medallion Lakehouse Architecture</h5>
-                            <p>Organizes raw data into a Bronze, Silver, and Gold Medallion pattern within Azure Data Lake Gen2.</p>
+                            <p>Organizes raw data into a Bronze, Silver, and Gold Medallion pattern within Azure Data
+                                Lake Gen2.</p>
 
                             <h5>Enterprise-Grade Insight Serving</h5>
-                            <p>Connects Power BI directly to the Gold layer for real-time executive dashboarding and KPIs.</p>
+                            <p>Connects Power BI directly to the Gold layer for real-time executive dashboarding and
+                                KPIs.</p>
 
                             <h5>Unified Governance & Security</h5>
-                            <p>Secured via Databricks Unity Catalog, Azure Active Directory, and Azure Key Vault for credentials.</p>
+                            <p>Secured via Databricks Unity Catalog, Azure Active Directory, and Azure Key Vault for
+                                credentials.</p>
 
                             <h5>Architectural Pattern: Layered Architecture (N-tier)</h5>
-                            <p>The system is built on a clean <b>Layered Architecture (N-tier)</b>, ensuring separation of concerns:</p>
+                            <p>The system is built on a clean <b>Layered Architecture (N-tier)</b>, ensuring separation
+                                of concerns:</p>
                             <ul>
                                 <li><b>Data Ingestion Layer:</b> Moves on-prem data via Azure Data Factory.</li>
-                                <li><b>Processing Layer:</b> Handles large-scale transformations via Azure Databricks and Synapse.</li>
-                                <li><b>Storage & Serving Layer:</b> ADLS Gen2 Lakehouse and Power BI for intuitive reporting.</li>
+                                <li><b>Processing Layer:</b> Handles large-scale transformations via Azure Databricks
+                                    and Synapse.</li>
+                                <li><b>Storage & Serving Layer:</b> ADLS Gen2 Lakehouse and Power BI for intuitive
+                                    reporting.</li>
                             </ul>
 
                             <h5>Functional Requirements</h5>
                             <ul>
-                                <li><b>Data Migration:</b> Extract data from on-premises SQL servers to Azure cloud securely.</li>
-                                <li><b>Data Transformation:</b> Clean and aggregate data into a Medallion architecture (Bronze, Silver, Gold).</li>
-                                <li><b>Business Intelligence:</b> Provide real-time dashboards and KPIs via Power BI.</li>
-                                <li><b>Secret Management:</b> Securely store connection credentials and tokens without hardcoding.</li>
+                                <li><b>Data Migration:</b> Extract data from on-premises SQL servers to Azure cloud
+                                    securely.</li>
+                                <li><b>Data Transformation:</b> Clean and aggregate data into a Medallion architecture
+                                    (Bronze, Silver, Gold).</li>
+                                <li><b>Business Intelligence:</b> Provide real-time dashboards and KPIs via Power BI.
+                                </li>
+                                <li><b>Secret Management:</b> Securely store connection credentials and tokens without
+                                    hardcoding.</li>
                             </ul>
 
                             <h5>Non-Functional Requirements</h5>
                             <ul>
-                                <li><b>Performance:</b> speed and responsiveness via Azure Databricks Spark clusters.</li>
-                                <li><b>Security:</b> protection against unauthorized access enforced by Azure Active Directory and Key Vault.</li>
-                                <li><b>Usability:</b> ease of use provided by seamless Power BI dashboard integrations.</li>
-                                <li><b>Reliability:</b> system stability and availability maintained by managed Azure Data Factory pipelines.</li>
-                                <li><b>Scalability:</b> ability to handle growth via elastic Azure Synapse data warehousing.</li>
-                                <li><b>Maintainability:</b> ease of updates and fixes using centralized Unity Catalog governance.</li>
-                                <li><b>Portability:</b> ability to run in different environments due to decoupled storage (ADLS) and compute (Databricks).</li>
+                                <li><b>Performance:</b> speed and responsiveness via Azure Databricks Spark clusters.
+                                </li>
+                                <li><b>Security:</b> protection against unauthorized access enforced by Azure Active
+                                    Directory and Key Vault.</li>
+                                <li><b>Usability:</b> ease of use provided by seamless Power BI dashboard integrations.
+                                </li>
+                                <li><b>Reliability:</b> system stability and availability maintained by managed Azure
+                                    Data Factory pipelines.</li>
+                                <li><b>Scalability:</b> ability to handle growth via elastic Azure Synapse data
+                                    warehousing.</li>
+                                <li><b>Maintainability:</b> ease of updates and fixes using centralized Unity Catalog
+                                    governance.</li>
+                                <li><b>Portability:</b> ability to run in different environments due to decoupled
+                                    storage (ADLS) and compute (Databricks).</li>
                             </ul>
                         </div>
                     </div>
@@ -119,7 +144,15 @@
                     <h4>Building the Future of Data-Driven Decisions.</h4>
                 </div>
                 <div class="col-md-2 text-center">
-                    <a href="index.html#architecture-portfolio" class="btn btn-cta">Back to Portfolio</a>
+                    <a href="portfolio.html" class="btn btn-cta">Back to Portfolio</a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-5 col-md-offset-2">
+
+                </div>
+                <div class="col-md-2 text-center">
+                    <a href="index.html" class="btn btn-cta">Back to Home</a>
                 </div>
             </div>
         </div>
@@ -128,7 +161,8 @@
     <footer>
         <div class="container text-center">
             <img src="img/logo-white.png" class="logo-footer" alt="PixelPipeline - Data Engineering & AI Consulting">
-            <p style="color: #666; font-size: 14px; margin-top: 20px;">© 2025 PixelPipeline Inc. — Precision. Innovation. Excellence.</p>
+            <p style="color: #666; font-size: 14px; margin-top: 20px;">© 2025 PixelPipeline Inc. — Precision.
+                Innovation. Excellence.</p>
         </div>
     </footer>
 
@@ -138,4 +172,5 @@
     <script src="js/smooth-scroll.js"></script>
     <script src="js/custom.js"></script>
 </body>
+
 </html>
