@@ -58,14 +58,21 @@
                         <div class="detailed-description">
                             <h1>ServiceNow AI Agent Proxy & Optimization Layer</h1>
                             <h2>The Problem, The Pain Point</h2>
-                            <p>Integrating AI Agents directly with ServiceNow (SNOW) creates severe bottlenecks. Direct
+                            <p>Integrating AI Agents directly with ServiceNow (SNOW) creates severe bottlenecks and
+                                critical security vulnerabilities. Direct
                                 queries can cause 2-minute delays, breaking conversational flow. Massive, unoptimized
                                 payloads bloat network traffic, and unchecked AI queries risk triggering API rate
-                                limits, degrading performance for human operators. Optimizing latency between Copilot
-                                and SNOW is essential for a fluid AI experience.</p>
+                                limits, degrading performance for human operators. Furthermore, exposing backend APIs
+                                directly to an LLM without an enforcement layer introduces risks of prompt injection,
+                                privilege escalation, and unintended PII exposure. Optimizing latency and securing the
+                                boundary between Copilot
+                                and SNOW is essential for a fluid, safe enterprise AI experience.</p>
                             <h2>The Solution, The Process</h2>
-                            <p>A high-performance middleware proxy brokering requests between Copilot AI Agents and our
-                                ServiceNow instance. Decoupling the AI from the system of record resolves latency issues
+                            <p>A dual-layer architecture combining a deterministic <b>Security Policy Gateway</b> and a
+                                high-performance middleware proxy. This setup brokers requests between Copilot AI Agents
+                                and our
+                                ServiceNow instance. The Security Gateway acts as a strict bouncer—classifying and
+                                sanitizing user intent—while the proxy decoupling resolves latency issues
                                 and protects IT operations from API exhaustion.</p>
 
                             <div class="project-image-container">
@@ -75,11 +82,15 @@
 
                             <h2>The Results, The Business Value</h2>
                             <p>The implementation of this proxy layer delivered immediate, transformative improvements
-                                to the AI agent's responsiveness and overall system maintainability.</p>
+                                to the AI agent's responsiveness, security posture, and overall system maintainability.
+                            </p>
                             <ul>
                                 <li><b>Unprecedented Speed:</b> User waiting times shrank dramatically from over 2
                                     minutes down to just <b>58ms</b> (on cache miss), and effectively <b>0ms</b>
                                     (instantaneous) on Redis cache hits.</li>
+                                <li><b>Zero-Trust Security Enforcement:</b> All requests are classified and sanitized
+                                    before execution, blocking injections and redacting sensitive data deterministically
+                                    without relying on the LLM's own self-policing.</li>
                                 <li><b>Architectural Decoupling:</b> A true, scalable architecture cleanly separates the
                                     AI presentation layer from the system of record, protecting backend resources from
                                     API exhaustion.</li>
@@ -248,7 +259,17 @@
                                     trace,
                                     proving that this is a fully governed, enterprise-ready system, not a black-box
                                     AI toy.</li>
+
+                                <li><b> The security (The Gateway):</b> No untrusted request reaches the Business
+                                    Agent before passing through security policy enforcement.</li>
                             </ul>
+
+                            <h5>Agent Security Policy Gateway</h5>
+
+                            <div class="project-image-container">
+                                <img src="img/portfolio/PixelPipeline_Copilot-Servicenow-Agent-Security-Policy-Gateway.png"
+                                    alt="Agentic AI Job Interviewer Workflow Diagram">
+                            </div>
 
                             <h5>Component Diagram</h5>
                             <div class="project-image-container">
@@ -269,6 +290,167 @@
                                 <img src="img/portfolio/Pixelpipeline-copilot-snow-sequence-diagram.png"
                                     alt="Agentic AI Job Interviewer Workflow Diagram">
                             </div>
+
+
+
+                            <h2>Agent Security Gateway</h2>
+
+                            <h5>Overview & Security Model</h5>
+                            <p>The <b>Agent Security Gateway</b> is a security and governance layer placed between users
+                                and enterprise AI agents. Its purpose is to ensure that untrusted user requests are
+                                classified, sanitized, and policy-checked before they can reach a downstream Business
+                                Agent or enterprise data source.</p>
+
+                            <h5>Inbound Policy</h5>
+                            <ul>
+                                <li><b>Malicious user input</b> reaching the Business Agent</li>
+                                <li><b>Unnecessary PII</b> being forwarded downstream</li>
+                                <li><b>Risky/injection requests</b> invoking the Business Agent at all</li>
+                            </ul>
+
+
+                            <div class="project-image-container">
+                                <img src="img/portfolio/Pixelpipeline-copilot-snow-security-policy-flow.png"
+                                    alt="Agentic AI Job Interviewer Workflow Diagram">
+                            </div>
+
+
+
+                            <p>The solution follows a simple principle: <b>No untrusted request reaches the Business
+                                    Agent before passing through security policy enforcement.</b></p>
+                            <p>The Security Agent performs semantic security analysis and produces structured metadata.
+                                The Policy Gateway workflow then applies deterministic controls:</p>
+
+                            <table class="table table-bordered" style="margin-bottom: 30px;">
+                                <thead>
+                                    <tr>
+                                        <th>Condition</th>
+                                        <th>Decision</th>
+                                        <th>Behaviour</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Prompt injection detected</td>
+                                        <td><span class="label label-danger">BLOCK</span></td>
+                                        <td>Terminate request</td>
+                                    </tr>
+                                    <tr>
+                                        <td>High-risk request</td>
+                                        <td><span class="label label-danger">BLOCK</span></td>
+                                        <td>Terminate request</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Sensitive data detected</td>
+                                        <td><span class="label label-warning">REDACT</span></td>
+                                        <td>Forward sanitized request</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Normal request</td>
+                                        <td><span class="label label-success">ALLOW</span></td>
+                                        <td>Forward normalized request</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <p>Only ALLOW and REDACT paths can invoke the Business Agent.</p>
+
+                            <h5>Trust Boundaries</h5>
+                            <p>The Security Agent <b>does not access enterprise data</b>. The Business Agent receives
+                                only the <b>normalized/sanitized request</b>, not the original user prompt or
+                                unnecessary conversation context. Retrieved enterprise content must also be treated as
+                                <b>data rather than instructions</b>, reducing the risk of indirect prompt injection.
+                            </p>
+
+                            <h5>Validated Scenarios & Regression Suite</h5>
+                            <p>The architecture is source-independent and rigorously validates the following scenarios,
+                                proving that <b>security decisions control execution, rather than merely instructing the
+                                    downstream LLM to behave securely.</b></p>
+
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Test</th>
+                                        <th>Detection</th>
+                                        <th>Decision</th>
+                                        <th>Business Agent</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Normal knowledge request</td>
+                                        <td>None</td>
+                                        <td><span class="label label-success">ALLOW</span></td>
+                                        <td>Called</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Request containing unnecessary PII</td>
+                                        <td>Sensitive data</td>
+                                        <td><span class="label label-warning">REDACT</span></td>
+                                        <td>Called with sanitized request</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Prompt override / system prompt extraction</td>
+                                        <td>Injection</td>
+                                        <td><span class="label label-danger">BLOCK</span></td>
+                                        <td>Not called</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Fake administrator + emergency bypass</td>
+                                        <td>Privilege escalation / injection</td>
+                                        <td><span class="label label-danger">BLOCK</span></td>
+                                        <td>Not called</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <h5>Outbound Policy</h5>
+                            <ul>
+                                <li><b>Business Agent accidentally returning sensitive data</b></li>
+                                <li style="color: red;"><b>Downstream source content</b> containing prompt-injection
+                                    text</li>
+                                <li><b>Overly broad enterprise data</b> being returned</li>
+                                <li><b>Secrets, internal instructions</b>, or unauthorized fields appearing in the
+                                    response</li>
+                            </ul>
+
+                            <div class="project-image-container">
+                                <img src="img/portfolio/Pixelpipeline-copilot-snow-security-outbound.png"
+                                    alt="Agentic AI Job Interviewer Workflow Diagram">
+                            </div>
+
+                            <p>To enforce this, the Business Agent's response is treated as untrusted data and must pass
+                                an outbound classification node before reaching the user:</p>
+                            <table class="table table-bordered" style="margin-bottom: 30px;">
+                                <thead>
+                                    <tr>
+                                        <th>Condition</th>
+                                        <th>Decision</th>
+                                        <th>Behaviour</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Restricted Content</td>
+                                        <td><span class="label label-danger">BLOCK</span></td>
+                                        <td> Secrets, internal instructions, or prompt leakages are blocked. A generic
+                                            security message is returned instead.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Unknown Content</td>
+                                        <td><span class="label label-default">OTHER</span></td>
+                                        <td>Any ambiguous
+                                            response fails safely and is blocked, implementing strict fail-closed
+                                            behavior.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Normal Content</td>
+                                        <td><span class="label label-success">SAFE</span></td>
+                                        <td>Approved business information is returned directly.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+
 
                         </div>
                     </div>
